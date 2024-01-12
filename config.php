@@ -80,7 +80,7 @@ if (G5_DOMAIN) {
     else
         define('G5_URL', '');
 }
-
+/// local side path 수정 필요 // 
 if (isset($g5_path['path'])) {
     define('G5_PATH','/var/www/gnuboard5');
 } else {
