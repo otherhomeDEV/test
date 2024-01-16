@@ -5,6 +5,7 @@ if (!$board['bo_table']) {
    alert('존재하지 않는 게시판입니다.', G5_URL);
 }
 
+
 check_device($board['bo_device']);
 
 
@@ -182,6 +183,7 @@ $is_auth = $is_admin ? true : false;
 
 include_once(G5_PATH.'/head.sub.php');
 
+
 $width = $board['bo_table_width'];
 if ($width <= 100)
     $width .= '%';
@@ -237,8 +239,82 @@ if (isset($wr_id) && $wr_id) {
 
 // 전체목록보이기 사용이 "예" 또는 wr_id 값이 없다면 목록을 보임
 //if ($board['bo_use_list_view'] || empty($wr_id))
-if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
+
+// 업체게시판 google map api 페이지 -> 리스트들 나열되는 부분
+
+if ($board['bo_table'] === 'store' && empty($sca))  {
+    ?>
+        <!-- Google 지도 API 스크립트 포함 -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=en"></script>
+
+        <!-- Google 지도 초기화 함수 -->
+        <script>
+            function initialize() { 
+                var myLatlng = new google.maps.LatLng(-35.00152118204733, 138.59289366832573); 
+                var mapOptions = { 
+                    zoom: 14,
+                    center: myLatlng, 
+                    mapTypeId: google.maps.MapTypeId.ROADMAP 
+                } 
+                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
+                var marker = new google.maps.Marker({ 
+                    position: myLatlng, 
+                    map: map, 
+                    title: "Otherhome"
+                }); 
+            } 
+            window.onload = initialize;
+        </script>
+    </head>
+    <body>
+
+        
+        <?php
+        // 분류 사용 여부
+        $category_option = '';
+        $is_category = false;
+        if ($board['bo_use_category']) {
+            $is_category = true;
+            $category_href = get_pretty_url($bo_table);
+
+            $category_option .= '<li><a href="'.$category_href.'"';
+        if ($sca=='')
+            $category_option .= ' id="bo_cate_on"';
+            $category_option .= '>전체</a></li>';
+
+        $categories = explode('|', $board['bo_category_list']); // 구분자가 , 로 되어 있음
+            for ($i=0; $i<count($categories); $i++) {
+                $category = trim($categories[$i]);
+                if ($category=='') continue;
+                $category_option .= '<li><a href="'.(get_pretty_url($bo_table,'','sca='.urlencode($category))).'"';
+                $category_msg = '';
+                if ($category==$sca) { // 현재 선택된 카테고리라면
+                $category_option .= ' id="bo_cate_on"';
+                $category_msg = '<span class="sound_only">열린 분류 </span>';
+            }
+            $category_option .= '>'.$category_msg.$category.'</a></li>';
+        }
+        //======== <nav> 등 추가 html 코드 작업 필요 =====================//
+        echo '<ul id="bo_cate">';
+        echo $category_option;
+        echo '</ul>';
+        //==============================================================//
+}
+         ?>
+        <!-- 지도가 표기될 div -->
+        <div id="map_canvas" style="width: 100%; height: 400px; margin:0px;"></div>
+    </body>
+
+    <?php
+}
+
+
+
+else if($board['bo_table'] !== 'store' && $member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id)){
     include_once (G5_BBS_PATH.'/list.php');
+}
+
+////////////////
 
 include_once(G5_BBS_PATH.'/board_tail.php');
 

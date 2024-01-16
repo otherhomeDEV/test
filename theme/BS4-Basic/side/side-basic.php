@@ -27,6 +27,17 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 	                <?php echo na_widget('wr-list', 'freeboard', 'bo_list=freeboard'); ?>
                 </div>
                     <!-- } 위젯 끝-->
+                    <h3 class="h3 f-lg en">
+			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
+				    게시물 갯수 랭킹
+				</a>
+			</h3>
+
+			<hr class="hr"/>
+			<div class="px-3 px-sm-0 mt-3 mb-4"> <!--style="height:220px;"> 위젯 레이아웃 아래마진 - kayden { -->
+			<?php echo na_widget('rank', 'mb-rank-1') ?>
+			</div>
+
 
           
 
