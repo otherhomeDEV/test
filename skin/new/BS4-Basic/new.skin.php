@@ -29,6 +29,9 @@ $page_rows = (G5_IS_MOBILE) ? $config['cf_mobile_page_rows'] : $config['cf_new_r
 
 ?>
 
+
+
+
 <!-- 전체게시물 검색 시작 { -->
 <div id="new_search" class="collapse<?php echo ($wset['search_open'] || $mb_id) ? ' show' : ''; ?>">
 	<div class="alert bg-light border p-2 p-sm-3 mb-3 mx-3 mx-sm-0">
