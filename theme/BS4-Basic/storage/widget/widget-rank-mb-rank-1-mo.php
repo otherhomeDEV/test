@@ -1,7 +1,7 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 $data=array (
-  'mb_list' => '',
+  'mb_list' => 'AdelaideInside,kayden,popul9',
   'cache' => '',
   'rank' => '',
   'mode' => 'post',

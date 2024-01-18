@@ -265,9 +265,7 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
             } 
             window.onload = initialize;
         </script>
-    </head>
-    <body>
-
+  
         
         <?php
         // 분류 사용 여부
@@ -277,7 +275,7 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
             $is_category = true;
             $category_href = get_pretty_url($bo_table);
 
-            $category_option .= '<li><a href="'.$category_href.'"';
+            $category_option .= '<li><a class="py-2 px-3" href="'.$category_href.'"';
         if ($sca=='')
             $category_option .= ' id="bo_cate_on"';
             $category_option .= '>전체</a></li>';
@@ -286,7 +284,7 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
             for ($i=0; $i<count($categories); $i++) {
                 $category = trim($categories[$i]);
                 if ($category=='') continue;
-                $category_option .= '<li><a href="'.(get_pretty_url($bo_table,'','sca='.urlencode($category))).'"';
+                $category_option .= '<li><a class="py-2 px-3" href="'.(get_pretty_url($bo_table,'','sca='.urlencode($category))).'"';
                 $category_msg = '';
                 if ($category==$sca) { // 현재 선택된 카테고리라면
                 $category_option .= ' id="bo_cate_on"';
@@ -294,13 +292,61 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
             }
             $category_option .= '>'.$category_msg.$category.'</a></li>';
         }
-        //======== <nav> 등 추가 html 코드 작업 필요 =====================//
-        echo '<ul id="bo_cate">';
-        echo $category_option;
-        echo '</ul>';
-        //==============================================================//
 }
          ?>
+
+<nav id="bo_cate" class="sly-tab font-weight-normal mb-2">
+	<h3 class="sr-only">FAQ 분류 목록</h3>
+	<div class="px-3 px-sm-0">
+		<div class="d-flex">
+			<div id="bo_cate_list" class="sly-wrap flex-grow-1" style="overflow: hidden;">
+				<ul id="bo_cate_ul" class="sly-list d-flex border-left-0 text-nowrap" style="transform: translateZ(0px); width: 330px; min-width: 340px;">
+                <?php echo $category_option; ?>
+			</div>
+			<div>
+				<a href="javascript:;" class="sly-btn sly-prev ca-prev py-2 px-3 disabled">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+					<span class="sr-only">이전 분류</span>
+				</a>
+			</div>
+			<div>
+				<a href="javascript:;" class="sly-btn sly-next ca-next py-2 px-3 disabled">
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+					<span class="sr-only">다음 분류</span>
+				</a>				
+			</div>
+		</div>
+	</div>
+	<hr>
+	<script>
+		$(document).ready(function() {
+			$('#bo_cate .sly-wrap').sly({
+				horizontal: 1,
+				itemNav: 'basic',
+				smart: 1,
+				mouseDragging: 1,
+				touchDragging: 1,
+				releaseSwing: 1,
+				startAt: 0,
+				speed: 300,
+				prevPage: '#bo_cate .ca-prev',
+				nextPage: '#bo_cate .ca-next'
+			});
+
+			// Sly Tab
+			var cate_id = 'bo_cate';
+			var cate_size = na_sly_size(cate_id);
+
+			na_sly(cate_id, cate_size);
+
+			$(window).resize(function(e) {
+				na_sly(cate_id, cate_size);
+			});
+		});
+	</script>
+</nav>
+
+
         <!-- 지도가 표기될 div -->
         <div id="map_canvas" style="width: 100%; height: 400px; margin:0px;"></div>
     </body>
