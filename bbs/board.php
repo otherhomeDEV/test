@@ -244,28 +244,49 @@ if (isset($wr_id) && $wr_id) {
 
 if ($board['bo_table'] === 'store' && empty($sca))  {
     ?>
-        <!-- Google 지도 API 스크립트 포함 -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwlNqAEil52XRPHmSVb4Luk18qQG9GqcM&sensor=false&language=en"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
 
-        <!-- Google 지도 초기화 함수 -->
-        <script>
-            function initialize() { 
-                var myLatlng = new google.maps.LatLng(-35.00152118204733, 138.59289366832573); 
-                var mapOptions = { 
-                    zoom: 14,
-                    center: myLatlng, 
-                    mapTypeId: google.maps.MapTypeId.ROADMAP 
-                } 
-                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); 
-                var marker = new google.maps.Marker({ 
-                    position: myLatlng, 
-                    map: map, 
-                    title: "Otherhome"
-                }); 
-            } 
-            window.onload = initialize;
-        </script>
+    <script>
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: { lat: -35.00150, lng: 138.59281 },
+  });
   
+  const tourStops = [
+    [{ lat: -35.02058, lng: 138.523126 }, "Boynton Pass"], 
+    [{ lat: -34.92986, lng: 138.594151 }, "Airport Mesa"], 
+  ];
+  // Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow();
+
+  // Create the markers.
+  tourStops.forEach(([position, title], i) => {
+    const marker = new google.maps.Marker({
+      position,
+      map,
+      title: `${i + 1}. ${title}`,
+      label: `${i + 1}`,
+      optimized: false,
+    });
+
+    // Add a click listener for each marker, and set up the info window.
+    marker.addListener("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.getTitle());
+      infoWindow.open(marker.getMap(), marker);
+    });
+  });
+}
+
+window.initMap = initMap;
+
+
+    </script>
         
         <?php
         // 분류 사용 여부
@@ -348,7 +369,14 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 
 
         <!-- 지도가 표기될 div -->
-        <div id="map_canvas" style="width: 100%; height: 400px; margin:0px;"></div>
+        
+        <div id="map" style=" height: 50%;"></div>
+        <button type="button" class="btn btn-info" onclick="findingStores()">음식점</button>
+        <button type="button" class="btn btn-info">정비</button>
+        <button type="button" class="btn btn-info">미용</button>
+        <button type="button" class="btn btn-info">부동산</button>
+        <button type="button" class="btn btn-info">정육</button>
+        
     </body>
 
     <?php
