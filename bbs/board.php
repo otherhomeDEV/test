@@ -255,6 +255,8 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 
   function initMap() {
   const myLatLng = { lat:  -34.92843, lng: 138.60002 };  
+
+  
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
 
@@ -366,8 +368,13 @@ function findingStores(category) {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
   };
+  
+  
+
+
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
+  
 
   // 선택한 카테고리에 해당하는 tourstop 정보 가져오기
   const selectedTourStops = tourStops[category];
@@ -384,15 +391,23 @@ function findingStores(category) {
         optimized: false,
       });
 
+
+      //infoWindow 디자인 요소
+      const contentString1= `
+    <div style="width: 200px;">
+      <p style="color: #333; margin: 0 0 10px; font-size:16px; font-weight: bold;">${marker.title}</p>`
+   
       // 마커에 클릭 이벤트 핸들러 추가
       marker.addListener("click", () => {
         infoWindow.close();
-        infoWindow.setContent(marker.getTitle());
+        infoWindow.setContent(contentString1);
         infoWindow.open(marker.getMap(), marker);
       });
     }
   }
 }
+
+
 
 
     </script>
