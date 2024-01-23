@@ -251,39 +251,148 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 
     <script>
 
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 11,
-    center: { lat: -35.00150, lng: 138.59281 },
-  });
-  
-  const tourStops = [
-    [{ lat: -35.02058, lng: 138.523126 }, "Boynton Pass"], 
-    [{ lat: -34.92986, lng: 138.594151 }, "Airport Mesa"], 
-  ];
+
+
+  function initMap() {
+  const myLatLng = { lat:  -34.92843, lng: 138.60002 };  
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow();
 
-  // Create the markers.
-  tourStops.forEach(([position, title], i) => {
-    const marker = new google.maps.Marker({
-      position,
-      map,
-      title: `${i + 1}. ${title}`,
-      label: `${i + 1}`,
-      optimized: false,
-    });
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: myLatLng,
+  });
 
-    // Add a click listener for each marker, and set up the info window.
-    marker.addListener("click", () => {
+  const marker =  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Victoria square",
+  });
+
+  // Add a click listener for each marker, and set up the info window.
+  marker.addListener("click", () => {
       infoWindow.close();
       infoWindow.setContent(marker.getTitle());
       infoWindow.open(marker.getMap(), marker);
     });
-  });
+
 }
 
 window.initMap = initMap;
+
+
+function findingStores(category) {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11.5,
+    center: { lat: -34.92843, lng: 138.60002 },
+  });
+  
+  const tourStops = {
+    음식점: [
+      [{ lat: -35.02058, lng: 138.52303 }, "The Korean Vibe"],
+      [{ lat: -35.00000, lng: 138.54000 }, "Seoul Sweetie"],
+      [{ lat: -34.92991, lng: 138.59422 }, "Busan Baby"],
+      [{ lat: -34.92781, lng: 138.59710 }, "GO-JJI ADELAIDE BBQ"],
+      [{ lat: -34.92759, lng: 138.59352 }, "반반 치킨"],
+      [{ lat: -34.92620, lng: 138.59575 }, "+82 고기"],
+      [{ lat: -34.92477, lng: 138.60088 }, "+82 포차"],
+      [{ lat: -34.92991, lng: 138.59422 }, "주로흥할"],
+      [{ lat: -34.93120, lng: 138.59589 }, "먹방"],
+      [{ lat: -34.93089, lng: 138.59491 }, "박봉숙 식당"],
+      [{ lat: -34.93423, lng: 138.60611 }, "고여사"],
+      // 추가적인 음식점 tourstops을 여기에 추가
+    ],
+    정비: [
+      [{ lat: -34.90997, lng: 138.68176 }, "Green Crash Repairs"],
+      // 추가적인 정비 tourstops을 여기에 추가
+    ],
+    미용: [
+      [{ lat: -34.92605, lng: 138.60595 }, "Street hair"],
+      [{ lat: -34.92809, lng: 138.51131 }, "DD Lashes"],
+      [{ lat: -34.88816, lng: 138.67468 }, "The Born Beauty"],
+      [{ lat: -34.92036, lng: 138.64955 }, "Star Hair Salon"],
+      [{ lat: -34.92217, lng: 138.60354 }, "Hair Beaute"],
+      [{ lat: -34.92856, lng: 138.59450 }, "Oh Kim's Hair Salon"],
+      [{ lat: -34.92306, lng: 138.60575 }, "KOrean COlor Hairsalon"],
+      [{ lat: -34.89021, lng: 138.65468 }, "Cozy Hair"],
+      // 추가적인 미용 tourstops을 여기에 추가
+    ],
+    부동산: [
+      [{ lat: -35.00159, lng: 138.59293 }, "Otherhome Sharehouse"],
+      // 추가적인 부동산 tourstops을 여기에 추가
+    ],
+    정육: [
+      [{ lat: -34.88034, lng: 138.68451 }, "yes butcher"],
+      [{ lat: -34.89270, lng: 138.64912 }, "최가네 정육점"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+    한인마트: [
+      [{ lat: -34.90722, lng: 138.59519 }, "빌리지마트"],
+      [{ lat: -34.92841, lng: 138.59668 }, "서울식품"],
+      [{ lat: -34.92886, lng: 138.59693 }, "코리아나마트"],
+      [{ lat: -34.90255, lng: 138.65708 }, "패밀리마트"],
+      [{ lat: -34.92077, lng: 138.64478 }, "해피마트"],
+      [{ lat: -34.88991, lng: 138.65546 }, "Lucky Mart"],
+      [{ lat: -34.90063, lng: 138.63490 }, "Together Mart"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+    카페: [
+      [{ lat: -34.92356, lng: 138.59781 }, "Waffle & Coffee"],
+      [{ lat: -34.93224, lng: 138.60337 }, "Seoul Sisters"],
+      [{ lat: -34.92395, lng: 138.55839 }, "Latte Studio"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+    회계: [
+      [{ lat: -34.99000, lng: 138.59000 }, "Dummy data"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+    의료: [
+      [{ lat: -34.93101, lng: 138.59610 }, "Harmony Aesthetic Clinic"],
+      [{ lat: -34.83199, lng: 138.69123 }, "Bupa Dental Tea Tree Plaza"],
+      [{ lat: -34.90884, lng: 138.59580 }, "Anew Smile Implant Centre"],
+      [{ lat: -35.06815, lng: 138.86458 }, "Mount Barker Dentists"],
+      [{ lat: -34.92059, lng: 138.63777 }, "Primary Dental"],
+      [{ lat: -34.80550, lng: 138.61593 }, "Adelaide Disability Medical Services"],
+      [{ lat: -34.97477, lng: 138.60948 }, "Pro Health Care Mitcham"],
+      [{ lat: -34.85181, lng: 138.50824 }, "Trinity Medical Centre - Port Adelaide"],
+      [{ lat: -34.92708, lng: 138.63139 }, "Pro Health Care Norwood"],
+      [{ lat: -34.93980, lng: 138.63680 }, "East Adelaide Dental Studio"],
+      [{ lat: -34.92380, lng: 138.60057 }, "JYL Optical Outlet"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+    기타: [
+      [{ lat: -34.92255, lng: 138.59974 }, "Study SA 유학원"],
+      [{ lat: -34.92433, lng: 138.60087 }, "정에듀 Jung Education Australia"],
+      // 추가적인 정육 tourstops을 여기에 추가
+    ],
+  };
+  // Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow();
+
+  // 선택한 카테고리에 해당하는 tourstop 정보 가져오기
+  const selectedTourStops = tourStops[category];
+
+  if (selectedTourStops) {
+    // 선택한 카테고리에 대한 모든 마커 생성
+    for (let i = 0; i < selectedTourStops.length; i++) {
+      const [position, title] = selectedTourStops[i];
+      const marker = new google.maps.Marker({
+        position,
+        map,
+        title: `${i + 1}. ${title}`,
+        label: `${i + 1}`,
+        optimized: false,
+      });
+
+      // 마커에 클릭 이벤트 핸들러 추가
+      marker.addListener("click", () => {
+        infoWindow.close();
+        infoWindow.setContent(marker.getTitle());
+        infoWindow.open(marker.getMap(), marker);
+      });
+    }
+  }
+}
 
 
     </script>
@@ -371,12 +480,18 @@ window.initMap = initMap;
         <!-- 지도가 표기될 div -->
         
         <div id="map" style=" height: 50%;"></div>
-        <button type="button" class="btn btn-info" onclick="findingStores()">음식점</button>
-        <button type="button" class="btn btn-info">정비</button>
-        <button type="button" class="btn btn-info">미용</button>
-        <button type="button" class="btn btn-info">부동산</button>
-        <button type="button" class="btn btn-info">정육</button>
-        
+        <div style="margin-top : 40px;">
+        <button type="button" class="btn btn-info" onclick="findingStores('음식점')">음식점</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('정비')">정비</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('미용')">미용</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('부동산')">부동산</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('정육')">정육</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('한인마트')">한인마트</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('카페')">카페</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('회계')">회계</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('의료')">의료</button>
+        <button type="button" class="btn btn-info" onclick="findingStores('기타')">기타</button>
+    </div>
     </body>
 
     <?php
