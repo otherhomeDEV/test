@@ -84,7 +84,7 @@ if (G5_DOMAIN) {
 if (isset($g5_path['path'])) {
     define('G5_PATH','/home/otherhome/Desktop/AI/');
 } else {
-    define('G5_PATH', '');
+    define('http://89.116.212.83:80/', '/home/cp266428/public_html/');
 }
 
 define('G5_ADMIN_URL',      G5_URL.'/'.G5_ADMIN_DIR);
