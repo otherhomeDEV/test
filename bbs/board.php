@@ -404,7 +404,7 @@ function findingStores(category) {
    
 
       const contentStringTest = `<div class="card" style="height:17rem">
-                                    <img class="card-img-top " style="height:8rem;" src="${imglink}" alt="Card image cap">
+                                    <img class="card-img-top " style="height:7rem;" src="${imglink}" alt="Card image cap">
                                     <div class="card-body">
                                         <h6 class="card-title">${marker.title}</h6>
                                         <p class="card-text">${address}</p>
