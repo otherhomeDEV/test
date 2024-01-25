@@ -511,7 +511,7 @@ function findingStores(category) {
 
         <!-- 지도가 표기될 div -->
         
-    <div id="map" style=" height:35%;"></div>
+    <div id="map" style=" height:500px;"></div>
     <div style="margin-top : 35px; width:100%;">
         <button type="button" class="btn btn-light"  onclick="findingStores('음식점')">음식점</button>
         <button type="button" class="btn btn-light"  onclick="findingStores('미용')">미용</button>
