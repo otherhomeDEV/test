@@ -512,7 +512,7 @@ function findingStores(category) {
         <!-- 지도가 표기될 div -->
         
     <div id="map" style=" height:500px;"></div>
-    <div style="margin-top : 35px; width:100%;">
+    <!--<div style="margin-top : 35px; width:100%;">
         <button type="button" class="btn btn-light"  onclick="findingStores('음식점')">음식점</button>
         <button type="button" class="btn btn-light"  onclick="findingStores('미용')">미용</button>
         <button type="button" class="btn btn-light"  onclick="findingStores('부동산')">부동산</button>
@@ -523,26 +523,26 @@ function findingStores(category) {
         <button type="button" class="btn btn-light"  onclick="findingStores('회계')">회계</button>
         <button type="button" class="btn btn-light"  onclick="findingStores('의료')">의료</button>
         <button type="button" class="btn btn-light"  onclick="findingStores('기타')">기타</button>
-    </div>
+    </div>-->
 
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div id="selectedItem">
-        선택된 항목 : <span id="selectedText">전체</span>
-       </div>
-        </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" onclick="dropdownClick('음식점')">음식점</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('미용')">미용</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('부동산')">부동산</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('정비')">정비</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('정육')">정육</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('한인마트')">한인마트</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('카페')">카페</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('회계')">회계</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('의료')">의료</a>
-        <a class="dropdown-item" href="#" onclick="dropdownClick('기타')">기타</a>
-    </div>
+    <div class="dropdown" style="margin-top : 20px; display: flex; justify-content: center;" >
+            <button class="text-white dropdown-toggle" style="background-color:#ffc51b; font-weight:bold; border-radius:15px; border:none;" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div id="selectedItem">
+            한눈에 보기 : <span id="selectedText">전체</span>
+           </div>
+            </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item" href="#" onclick="dropdownClick('음식점')">음식점</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('미용')">미용</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('부동산')">부동산</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('정비')">정비</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('정육')">정육</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('한인마트')">한인마트</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('카페')">카페</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('회계')">회계</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('의료')">의료</a>
+            <a class="dropdown-item" href="#" onclick="dropdownClick('기타')">기타</a>
+        </div>
     </div>
     <script>
     function dropdownClick(category) {
