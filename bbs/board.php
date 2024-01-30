@@ -254,33 +254,48 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 
 
   function initMap() {
-  const myLatLng = { lat:  -34.92843, lng: 138.60002 };  
+  const myLatLng = { lat:  -34.92843, lng: 138.60002, address: "5000 Adelaide, SA", imglink: "https://lh5.googleusercontent.com/p/AF1QipP3csuve12MHaXC9oPei4Vamid6w3K85c-4frgx=w408-h242-k-no", link:"https://www.google.com/maps/place/Victoria+Square,+Adelaide+SA+5000/@-34.9285844,138.5974475,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0ced86732f663:0x452e8ee9c3909e4c!8m2!3d-34.9285844!4d138.6000224!16s%2Fg%2F11cjgdd_jt?entry=ttu"};  
 
   
   // Create an info window to share between markers.
-  const infoWindow = new google.maps.InfoWindow();
+  const infoWindow = new google.maps.InfoWindow( {maxWidth: 190, maxHeight:250} );
 
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 11,
-    center: myLatLng,
+    center: { lat: myLatLng.lat, lng: myLatLng.lng }
   });
+
+  const initcontentString = `<div class="card" style="height:17rem; border-radius: 5px;" >
+                                    <img class="card-img-top " style="height:7rem;" src="${myLatLng.imglink}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h6 class="card-title" style= font-family:  'arial', sans-serif !important;>Victoria square</h6>
+                                        <p class="card-text" style= font-family:  'arial', sans-serif !important;>${myLatLng.address}</p>
+                                    </div>
+                                    <a href="${myLatLng.link}" target="_blank" class="btn text-white" style="background-color:#ffc51b; font-family:'arial', sans-serif !important; font-weight:bold;" >구글맵 바로가기</a>
+                                </div>`
 
   const marker =  new google.maps.Marker({
     position: myLatLng,
     map,
-    title: "Victoria square",
+    title: "Victoria Square",
+    optimized: false,
   });
 
   // Add a click listener for each marker, and set up the info window.
   marker.addListener("click", () => {
       infoWindow.close();
-      infoWindow.setContent(marker.getTitle());
-      infoWindow.open(marker.getMap(), marker);
+      infoWindow.setContent(initcontentString);
+      infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
     });
 
 }
 
 window.initMap = initMap;
+
 
 function updateSelection(category) {
         // 선택된 항목을 div에 표시
@@ -322,6 +337,7 @@ function findingStores(category) {
       [{ lat: -34.92856, lng: 138.59450 }, "Oh Kim's Hair Salon","128A Grote St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702621176_3691.png","https://www.google.com/maps/place/Oh+Kim's+Hair+Salon/@-34.928701,138.5944964,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0cf26b1e97f35:0xffc6285d76281395!8m2!3d-34.928701!4d138.5944964!16s%2Fg%2F1pwfwrq7y?entry=ttu"],
       [{ lat: -34.92306, lng: 138.60575 }, "KOrean COlor Hairsalon","56 Pulteney St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702621027_2335.png","https://www.google.com/maps/place/KOrean+COlour+Hairsalon/@-34.9231785,138.6032129,17z/data=!4m6!3m5!1s0x6ab0ced3ba17928d:0x4c03ce4467e70edf!8m2!3d-34.9231785!4d138.6057825!16s%2Fg%2F11c0xp5w68?entry=ttu"],
       [{ lat: -34.89021, lng: 138.65468 }, "Cozy Hair","Shop 6/474-476 Payneham Rd, Glynde SA 5070","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702620820_4782.png","https://www.google.com/maps/place/Cozy+Hair.+%EC%BD%94%EC%A7%80%ED%97%A4%EC%96%B4.+Korean+Hairdressing/@-34.8904388,138.6546942,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0cbd7ee439681:0xe53522a0a6589917!8m2!3d-34.8904388!4d138.6546942!16s%2Fg%2F1tfly00v?entry=ttu"],
+      [{ lat: -34.94762, lng: 138.62797 }, "Salon A by Genie","193A Glen Osmond Rd, Frewville SA 5063","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706571484_6158.png","https://www.google.com/maps/place/Salon+A+by+Genie/@-34.947733,138.6253272,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0cfb042ff4bd1:0x3054f9c21af594f8!8m2!3d-34.947733!4d138.6278968!16s%2Fg%2F11kpb3d097?entry=ttu"],
       // 추가적인 미용 tourstops을 여기에 추가
     ],
     부동산: [
@@ -350,7 +366,7 @@ function findingStores(category) {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     회계: [
-      [{ lat: -34.99000, lng: 138.59000 }, "Dummy data"],
+      [{ lat: -34.90566, lng: 138.60926 }, "SKS Accountant", "Shop 59/53-55 Melbourne St, North Adelaide SA 5006", "https://adelaideinside.com/data/editor/2401/38f95a2b5c6a669fc8ea19795edd6621_1706588587_4673.png", "https://www.google.com/maps/place/SKS+Accounting+%26+Business+Pty+Ltd/@-34.9043246,138.6072136,16z/data=!4m6!3m5!1s0x6ab0c93cc9402809:0xd79a9d6923d34471!8m2!3d-34.9059928!4d138.6094779!16s%2Fg%2F11dym0tbjl?entry=ttu" ],
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     의료: [
@@ -365,6 +381,8 @@ function findingStores(category) {
       [{ lat: -34.92708, lng: 138.63139 }, "Pro Health Care Norwood","93 Kensington Road, Norwood SA 5067","https://adelaideinside.com/data/editor/2312/493eb846c1d08b25da4a70a96acf1b0c_1703218742_0067.png","https://www.google.com/maps/place/Pro+Health+Care+Norwood/@-34.9272598,138.6289044,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0c949082810eb:0x7acc9fcca044f956!8m2!3d-34.9272598!4d138.631474!16s%2Fg%2F11g190s988?entry=ttu"],
       [{ lat: -34.93980, lng: 138.63680 }, "East Adelaide Dental Studio","1 Allinga Ave, Glenside SA 5065","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702622525_8343.png","https://www.google.com/maps/place/East+Adelaide+Dental+Studio/@-34.9398946,138.6341875,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0cea84dec5ad1:0xff1ebb5e47a8ec1b!8m2!3d-34.9398946!4d138.6367571!16s%2Fg%2F1tfl0bbh?entry=ttu"],
       [{ lat: -34.92380, lng: 138.60057 }, "JYL Optical Outlet","29 James Pl, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702622277_1957.png","https://www.google.com/maps/place/JYL+Optical+Outlet/@-34.9239211,138.5980291,17z/data=!3m2!4b1!5s0x6ab0ced648d1772b:0xceca2a9bb742a5e3!4m6!3m5!1s0x6ab0ced6453a206d:0xd611117de2202fc8!8m2!3d-34.9239211!4d138.6005987!16s%2Fg%2F1tc_r4br?entry=ttu"],
+      [{ lat: -34.90022, lng: 138.65673 }, "Glynde Veterinary Surgery","125 Glynburn Rd, Glynde SA 5070","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706492987_5318.png","https://www.google.com/maps/place/Glynde+Veterinary+Surgery/@-34.9004674,138.6542654,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0ca35da53f115:0xd937e63c4e5c444f!8m2!3d-34.9004674!4d138.6568403!16s%2Fg%2F1tg_x6pk?entry=ttu"],
+      
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     기타: [
@@ -397,19 +415,13 @@ function findingStores(category) {
       });
 
 
-      //infoWindow 디자인 요소
-      //const contentString1= `
-    //<div style="width: 200px;">
-      //<p style="color: #333; margin: 0 0 10px; font-size:16px; font-weight: bold;">${marker.title}</p>`
-   
-
-      const contentStringTest = `<div class="card" style="height:17rem">
+      const contentString = `<div class="card" style="height:17rem; border-radius: 5px;" >
                                     <img class="card-img-top " style="height:7rem;" src="${imglink}" alt="Card image cap">
                                     <div class="card-body">
-                                        <h6 class="card-title">${marker.title}</h6>
-                                        <p class="card-text">${address}</p>
+                                        <h6 class="card-title" style= font-family:  'arial', sans-serif !important;>${marker.title}</h6>
+                                        <p class="card-text" style= font-family:  'arial', sans-serif !important;>${address}</p>
                                     </div>
-                                    <a href="${link}" target="_blank" class="btn text-white" style="background-color:#ffc51b; font-weight:bold;" >구글맵 바로가기</a>
+                                    <a href="${link}" target="_blank" class="btn text-white" style="background-color:#ffc51b; font-family:'arial', sans-serif !important; font-weight:bold;" >구글맵 바로가기</a>
                                 </div>`
 
 
@@ -417,8 +429,12 @@ function findingStores(category) {
       // 마커에 클릭 이벤트 핸들러 추가
       marker.addListener("click", () => {
         infoWindow.close();
-        infoWindow.setContent(contentStringTest);
-        infoWindow.open(marker.getMap(), marker);
+        infoWindow.setContent(contentString);
+        infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
       });
     }
   }
@@ -512,26 +528,37 @@ function findingStores(category) {
         <!-- 지도가 표기될 div -->
         
     <div id="map" style=" height:500px;"></div>
-    <!--<div style="margin-top : 35px; width:100%;">
-        <button type="button" class="btn btn-light"  onclick="findingStores('음식점')">음식점</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('미용')">미용</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('부동산')">부동산</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('정비')">정비</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('정육')">정육</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('한인마트')">한인마트</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('카페')">카페</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('회계')">회계</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('의료')">의료</button>
-        <button type="button" class="btn btn-light"  onclick="findingStores('기타')">기타</button>
-    </div>-->
 
     <div class="dropdown" style="margin-top : 20px; display: flex; justify-content: center;" >
-            <button class="text-white dropdown-toggle" style="background-color:#ffc51b; font-weight:bold; border-radius:15px; border:none;" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="text-white dropdown-toggle" style="background-color:#ffc51b;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family:  'arial', sans-serif !important;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div id="selectedItem">
             한눈에 보기 : <span id="selectedText">전체</span>
            </div>
             </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item" href="#" onclick="dropdownClick('전체')">전체</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('음식점')">음식점</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('미용')">미용</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('부동산')">부동산</a>
@@ -549,7 +576,11 @@ function findingStores(category) {
         console.log(category);
         // 선택된 항목을 div에 표시
         updateSelection(category);
-        findingStores(category);
+        if(category === "전체"){
+            initMap(category);
+        } else {
+            findingStores(category);
+        }
     }
 </script>
     </body>
