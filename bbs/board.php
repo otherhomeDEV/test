@@ -251,65 +251,7 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 
     <script>
 
-
-
-  function initMap() {
-  const myLatLng = { lat:  -34.92843, lng: 138.60002, address: "5000 Adelaide, SA", imglink: "https://lh5.googleusercontent.com/p/AF1QipP3csuve12MHaXC9oPei4Vamid6w3K85c-4frgx=w408-h242-k-no", link:"https://www.google.com/maps/place/Victoria+Square,+Adelaide+SA+5000/@-34.9285844,138.5974475,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0ced86732f663:0x452e8ee9c3909e4c!8m2!3d-34.9285844!4d138.6000224!16s%2Fg%2F11cjgdd_jt?entry=ttu"};  
-
-  
-  // Create an info window to share between markers.
-  const infoWindow = new google.maps.InfoWindow( {maxWidth: 190, maxHeight:250} );
-
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 11,
-    center: { lat: myLatLng.lat, lng: myLatLng.lng }
-  });
-
-  const initcontentString = `<div class="card" style="height:17rem; border-radius: 5px;" >
-                                    <img class="card-img-top " style="height:7rem;" src="${myLatLng.imglink}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h6 class="card-title" style= font-family:  'arial', sans-serif !important;>Victoria square</h6>
-                                        <p class="card-text" style= font-family:  'arial', sans-serif !important;>${myLatLng.address}</p>
-                                    </div>
-                                    <a href="${myLatLng.link}" target="_blank" class="btn text-white" style="background-color:#ffc51b; font-family:'arial', sans-serif !important; font-weight:bold;" >구글맵 바로가기</a>
-                                </div>`
-
-  const marker =  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Victoria Square",
-    optimized: false,
-  });
-
-  // Add a click listener for each marker, and set up the info window.
-  marker.addListener("click", () => {
-      infoWindow.close();
-      infoWindow.setContent(initcontentString);
-      infoWindow.open({
-            anchor: marker,
-            map,
-            shouldFocus: false,
-        });
-    });
-
-}
-
-window.initMap = initMap;
-
-
-function updateSelection(category) {
-        // 선택된 항목을 div에 표시
-        document.getElementById('selectedText').innerText = category;
-    }
-
-
-function findingStores(category) {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 11.5,
-    center: { lat: -34.92843, lng: 138.60002 },
-  });
-  
-  const tourStops = {
+const tourStops = {
     음식점: [
       [{ lat: -35.02058, lng: 138.52303 }, "The Korean Vibe" , "513 Brighton Rd, Brighton SA 5048" ,"https://adelaideinside.com/data/editor/2401/8eb94b7344a02a8e5773374704e519ef_1704760025_1939.png"  , "https://www.google.com/maps/place/The+Korean+Vibe/@-35.0206534,138.5204877,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0db773c8423c9:0x1e1b35373ab4be78!8m2!3d-35.0206534!4d138.5230626!16s%2Fg%2F11l6xvf6y_?entry=ttu"],
       [{ lat: -35.00000, lng: 138.54000 }, "Seoul Sweetie","270 morphett St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702517477_6954.png" ,"https://www.google.com/maps/place/Seoul+Sweetie/@-34.929969,138.591593,17z/data=!3m1!4b1!4m6!3m5!1s0x6ab0cf0e389e5b0f:0xd4eda11441ae0e06!8m2!3d-34.929969!4d138.5941626!16s%2Fg%2F11hs0v6k92?entry=ttu"],
@@ -391,10 +333,80 @@ function findingStores(category) {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
   };
-  
-  
 
 
+  function initMap() {
+  
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11.5,
+    center: { lat: -34.92843, lng: 138.60002 },
+    });
+
+  // Create an info window to share between markers.
+  const infoWindow = new google.maps.InfoWindow( {maxWidth: 190, maxHeight:250} );
+
+  // 선택한 카테고리에 해당하는 tourstop 정보 가져오기
+  const selectedTourStops = tourStops["음식점"];
+
+  console.log(selectedTourStops);
+
+  if (selectedTourStops) {
+    // 선택한 카테고리에 대한 모든 마커 생성
+    for (let i = 0; i < selectedTourStops.length; i++) {
+      const [position, title, address, imglink, link] = selectedTourStops[i];
+      const marker = new google.maps.Marker({
+        position,
+        map,
+        title: `${i + 1}. ${title}`,
+        label: `${i + 1}`,
+        optimized: false,
+      });
+
+
+      const contentString = `<div class="card" style="height:17rem; border-radius: 5px;" >
+                                    <img class="card-img-top " style="height:7rem;" src="${imglink}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h6 class="card-title" style= font-family:  'arial', sans-serif !important;>${marker.title}</h6>
+                                        <p class="card-text" style= font-family:  'arial', sans-serif !important;>${address}</p>
+                                    </div>
+                                    <a href="${link}" target="_blank" class="btn text-white" style="background-color:#ffc51b; font-family:'arial', sans-serif !important; font-weight:bold;" >구글맵 바로가기</a>
+                                </div>`
+
+
+
+      // 마커에 클릭 이벤트 핸들러 추가
+      marker.addListener("click", () => {
+        infoWindow.close();
+        infoWindow.setContent(contentString);
+        infoWindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
+      });
+    }
+  }
+
+  }
+
+window.initMap = initMap;
+
+
+
+function updateSelection(category) {
+        // 선택된 항목을 div에 표시
+        document.getElementById('selectedText').innerText = category;
+    }
+
+
+
+function findingStores(category) {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11.5,
+    center: { lat: -34.92843, lng: 138.60002 },
+  });
+  
   // Create an info window to share between markers.
   const infoWindow = new google.maps.InfoWindow( {maxWidth: 210, maxHeight:250} );
   
@@ -554,11 +566,10 @@ function findingStores(category) {
   vertical-align: baseline;
   white-space: nowrap;" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div id="selectedItem">
-            한눈에 보기 : <span id="selectedText">전체</span>
+            한눈에 보기 : <span id="selectedText">음식점</span>
            </div>
             </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <a class="dropdown-item" href="#" onclick="dropdownClick('전체')">전체</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('음식점')">음식점</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('미용')">미용</a>
             <a class="dropdown-item" href="#" onclick="dropdownClick('부동산')">부동산</a>
@@ -572,16 +583,14 @@ function findingStores(category) {
         </div>
     </div>
     <script>
+
     function dropdownClick(category) {
         console.log(category);
         // 선택된 항목을 div에 표시
         updateSelection(category);
-        if(category === "전체"){
-            initMap(category);
-        } else {
-            findingStores(category);
-        }
+        findingStores(category);     
     }
+
 </script>
     </body>
 
