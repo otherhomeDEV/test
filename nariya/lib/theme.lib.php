@@ -1445,7 +1445,7 @@ function na_member_rows($wset) {
 	$term = ($wset['term'] == 'day' && (int)$wset['dayterm'] > 0) ? $wset['dayterm'] : $wset['term'];
 
 	$wset['mb_list'] = isset($wset['mb_list']) ? $wset['mb_list'] : '';
-	$sql_mb = na_sql_find('mb_id', $wset['mb_list'], 1);
+	$sql_mb = na_sql_find('mb_id', $wset['mb_list'], 1); // sql query 만들어 데이터를 부름 0이면 포함,1이면 제외
 
 	if($mode == 'connect') { // 현재접속회원
 		$sql = " select * from {$g5['login_table']} where mb_id <> '' $sql_mb order by lo_datetime desc ";
@@ -1492,6 +1492,73 @@ function na_member_rows($wset) {
 
 	return $list;
 }
+
+
+// 원하는 회원 추출
+function na_pickmember_rows($wset) {
+	global $g5;
+
+	$list = array();
+
+	$rows = isset($wset['rows']) ? (int)$wset['rows'] : 0;
+	$rows = ($rows > 0) ? $rows : 7;
+
+	$mode = isset($wset['mode']) ? $wset['mode'] : '';
+
+	$wset['term'] = isset($wset['term']) ? $wset['term'] : '';
+	$wset['dayterm'] = isset($wset['dayterm']) ? (int)$wset['dayterm'] : 0;
+	$term = ($wset['term'] == 'day' && (int)$wset['dayterm'] > 0) ? $wset['dayterm'] : $wset['term'];
+
+	$wset['mb_list'] = isset($wset['mb_list']) ? $wset['mb_list'] : '';
+	$sql_mb = na_sql_find('mb_id', $wset['mb_list'], 0);
+
+	if($mode == 'connect') { // 현재접속회원
+		$sql = " select * from {$g5['login_table']} where mb_id <> '' $sql_mb order by lo_datetime desc ";
+
+	} else if($mode == 'post' || $mode == 'comment') { // 글,댓글 등록수
+		$sql_term = na_sql_term($term, 'bn_datetime');
+		$sql_wr = ($mode == 'comment') ? "and wr_parent <> wr_id" : "and wr_parent = wr_id";
+		$sql = " select mb_id, count(mb_id) as cnt from {$g5['board_new_table']} 
+					where mb_id <> '' $sql_wr $sql_mb $sql_term group by mb_id order by cnt desc limit 0, $rows ";
+
+	} else if($term && $mode == 'point') { // 포인트(기간설정)
+		$sql_term = na_sql_term($term, 'po_datetime');
+		$sql = " select mb_id, sum(po_point) as cnt from {$g5['point_table']} 
+					where po_point > 0 $sql_mb $sql_term group by mb_id order by cnt desc limit 0, $rows ";
+
+	} else if($term && $mode == 'exp') { // 경험치(기간설정)
+		$sql_term = na_sql_term($term, 'xp_datetime');
+		$sql = " select mb_id, sum(xp_point) as cnt from {$g5['na_xp']} 
+					where 1 $sql_mb $sql_term group by mb_id order by cnt desc limit 0, $rows ";
+
+	} else {
+		$field = 'mb_point';
+		switch($mode) {
+			case 'exp'		: $field = 'as_exp'; $orderby = 'as_exp desc'; break; //경험치
+			case 'new'		: $orderby = 'mb_datetime desc'; break; //신규가입
+			case 'recent'	: $orderby = 'mb_today_login desc'; break; //최근접속
+			default			: $orderby = 'mb_point desc'; break; //포인트(기본값)
+		}
+		$sql = "select *, $field as cnt from {$g5['member_table']} where mb_leave_date = '' and mb_intercept_date = '' $sql_mb order by $orderby limit 0, $rows ";
+	}
+
+	$result = sql_query($sql, false);
+	if($result) {
+		for ($i=0; $row=sql_fetch_array($result); $i++) {
+			$list[$i] = ($row['mb_id'] && $row['mb_nick']) ? $row : get_member($row['mb_id']);
+			$list[$i]['cnt'] = $row['cnt'];
+			if(!$list[$i]['mb_open']) {
+				$list[$i]['mb_email'] = '';
+				$list[$i]['mb_homepage'] = '';
+			}
+			$list[$i]['name'] = get_sideview($list[$i]['mb_id'], $list[$i]['mb_nick'], $list[$i]['mb_email'], $list[$i]['mb_homepage']);
+		}
+	}
+
+	return $list;
+}
+
+
 
 // 인기검색어 추출
 function na_popular_rows($wset) {
