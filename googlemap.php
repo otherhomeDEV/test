@@ -41,6 +41,7 @@ const tourStops = {
       [{ lat: -34.94762, lng: 138.62797 }, "Salon A by Genie","193A Glen Osmond Rd, Frewville SA 5063","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706571484_6158.png","https://maps.app.goo.gl/aGfkucKaRBucUnBZ9"],
       // 추가적인 미용 tourstops을 여기에 추가
     ],
+    
     부동산: [
       [{ lat: -35.00159, lng: 138.59293 }, "Otherhome Sharehouse","3 Moore St, Pasadena SA 5042","https://adelaideinside.com/data/editor/2312/95453068bbdb3e279d6deab8d5d8e2d5_1702450536_3551.png","https://maps.app.goo.gl/793BAawdrTaRqgu87"],
       // 추가적인 부동산 tourstops을 여기에 추가
