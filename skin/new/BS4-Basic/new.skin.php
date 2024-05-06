@@ -216,8 +216,9 @@ $page_rows = (G5_IS_MOBILE) ? $config['cf_mobile_page_rows'] : $config['cf_new_r
 					제목
 				</div>
 				<div class="d-md-table-cell nw-10 pl-2 pr-md-1">이름</div>
-				<div class="d-md-table-cell nw-6 pr-md-1">날짜</a></div>
-				<div class="d-md-table-cell nw-8 pr-md-1">게시판</a></div>
+				<div class="d-md-table-cell nw-7 pr-md-1">날짜</a></div>
+				<div class="d-md-table-cell nw-7 pr-md-1">게시판</a></div>
+				<div class="d-md-table-cell nw-7 pr-md-1">조회</a></div>
 			</div>
 		</div>
 
@@ -282,6 +283,10 @@ $page_rows = (G5_IS_MOBILE) ? $config['cf_mobile_page_rows'] : $config['cf_new_r
 				</div>
 				<div class="float-left float-md-none d-md-table-cell nw-8 nw-md-auto f-sm font-weight-normal py-md-2 pr-md-1">
 					<a href="<?php echo get_pretty_url($list[$i]['bo_table']) ?>" class="text-muted"><?php echo na_cut_text($list[$i]['bo_subject'], 20) ?></a>
+				</div>
+				<div class="float-left float-md-none d-md-table-cell nw-6 nw-md-auto f-sm font-weight-normal py-md-2 pr-3 pr-md-1">
+					<span class="sr-only">조회</span>
+					<?php echo $list[$i]['wr_hit'] ?>
 				</div>
 				<div class="clearfix d-block d-md-none"></div>
 			</li>
