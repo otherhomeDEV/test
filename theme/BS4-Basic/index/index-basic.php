@@ -74,6 +74,19 @@ if($is_wing)
 			</div>
 
 		
+<!-- 위젯 시작 { -->
+	<h3 class="h3 f-lg en" style="margin-top:40px;">
+        		<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=magazine">
+            	인사이드 매거진 테스트
+        	</a>
+    		</h3>
+    		<hr class="hr"/>
+    		<div class="px-3 px-sm-0 my-3">
+        		<?php echo na_widget('wr-gallery-slider', 'gallery-3', 'bo_list=gallery rows=8'); ?>
+    		</div>
+   			 <!-- } 위젯 끝-->
+
+
 			<!-- 위젯 시작 { -->
 			<h3 class="h3 f-lg en" style="margin-top:20px;">
 				<a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=business">
@@ -86,17 +99,6 @@ if($is_wing)
 			</div>
 			<!-- } 위젯 끝-->
 
-			<!-- 위젯 시작 { -->
-				<h3 class="h3 f-lg en" style="margin-top:40px;">
-        		<a href="<?php echo get_pretty_url('medical'); ?>">
-            	형닥터
-        	</a>
-    		</h3>
-    		<hr class="hr"/>
-    		<div class="px-3 px-sm-0 my-3">
-        		<?php echo na_widget('wr-gallery-slider', 'gallery-3', 'bo_list=gallery rows=8'); ?>
-    		</div>
-   			 <!-- } 위젯 끝-->
 
 			
 
