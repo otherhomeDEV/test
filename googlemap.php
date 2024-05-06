@@ -10,7 +10,6 @@
 
     <script>
 
-
 const tourStops = {
     음식점: [
       [{ lat: -35.02058, lng: 138.52303 }, "The Korean Vibe" , "513 Brighton Rd, Brighton SA 5048" ,"https://adelaideinside.com/data/editor/2401/8eb94b7344a02a8e5773374704e519ef_1704760025_1939.png","https://maps.app.goo.gl/swjUL48GYE4tr1Jz8"],
