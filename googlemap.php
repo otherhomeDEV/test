@@ -3,8 +3,6 @@
 
 ?>
 
-
-
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
@@ -12,7 +10,6 @@
 
     <script>
 
-console.log("work2");
 
 const tourStops = {
     음식점: [
