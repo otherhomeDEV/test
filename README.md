@@ -1,1 +1,1 @@
-Adelaide Inside source code. 
+Adelaide Inside source code
