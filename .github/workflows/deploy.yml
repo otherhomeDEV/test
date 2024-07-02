@@ -18,7 +18,7 @@ jobs:
 
     - name: Deploy via SCP with password
       run: |
-        scp -r /github/workspace/AdelaideInside/* $USERNAME@$SERVER:/root/aidev
+       sshpass -p $FTP_PASSWORD scp -r /github/workspace/AdelaideInside/* $FTP_USERNAME@$FTP_SERVER:/aidev
   
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}  # FTP 서버 주소를 Secrets에서 가져와 환경 변수로 설정합니다.
