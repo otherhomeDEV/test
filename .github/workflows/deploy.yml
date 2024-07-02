@@ -18,12 +18,11 @@ jobs:
 
     - name: Deploy via SCP with password
       run: |
-       sshpass -p $FTP_PASSWORD scp -r /github/workspace/AdelaideInside/* $FTP_USERNAME@$FTP_SERVER:/aidev
-  
+        sshpass -p ${{ secrets.FTP_PASSWORD }} scp -o StrictHostKeyChecking=no -r /github/workspace/AdelaideInside/* ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/aidev
+
+    - name: Restart Docker container  # Docker 컨테이너를 재시작합니다.
+      run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}  # FTP 서버 주소를 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
-
-    - name: Restart Docker container  # Docker 컨테이너를 재시작합니다.
-      run: docker restart DevAI
