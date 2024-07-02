@@ -20,7 +20,7 @@ jobs:
       run: |
         lftp -c "
         open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-        mirror -R ./AdelaideInside /root/aidev;
+        mirror -R /github/workspace/AdelaideInside /root/aidev;
         bye;
         "
       env:
