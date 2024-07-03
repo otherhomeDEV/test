@@ -2,6 +2,11 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 
+// strings.php 파일을 불러옴
+$strings = include 'strings.php';
+
+echo $strings['루씨네 주문 고정 댓글']; // 출력: Welcome to our website!
+
 $captcha_html = "";
 if ($is_guest && $board['bo_comment_level'] < 2) {
     $captcha_html = captcha_html('_comment');
