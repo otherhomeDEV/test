@@ -14,7 +14,7 @@ if($is_wing)
 			<!-- 위젯 시작 { -->
 			<h3 class="h3 f-lg en">
 			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
-				   최신뉴스 (개발서버입니다)
+				   최신뉴스 (로컬서버입니다)
 				</a>
 			</h3>
 			<hr class="hr"/>

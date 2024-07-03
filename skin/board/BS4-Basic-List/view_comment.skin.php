@@ -1,6 +1,7 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
+
 // 변수 초기값
 $boset['na_shingo'] = isset($boset['na_shingo']) ? $boset['na_shingo'] : '';
 
@@ -296,9 +297,15 @@ $is_cnogood = (isset($boset['na_cnogood']) && $boset['na_cnogood']) ? true : fal
 					</div>
 				<?php } ?>
 
+<?php // strings.php 파일을 불러옴
+$strings = include_once(G5_PATH.'/strings.php');
+if($board['bo_table'] === 'Lucy_main'){
+	echo $strings['lucy_comment'] . "의 형태로 주문 댓글을 입력해주세요";
+}
+?>
 				<div class="input-group mb-3">
 					<textarea id="wr_content" name="wr_content" maxlength="10000" rows="4" class="form-control" 
-					<?php if ($comment_min || $comment_max) { ?>onkeyup="check_byte('wr_content', 'char_count');"<?php } ?>><?php echo $c_wr_content;  ?></textarea>
+					<?php if ($comment_min || $comment_max) { ?>onkeyup="check_byte('wr_content', 'char_count');"<?php } ?>placeholder="<?php if($board['bo_table'] === 'Lucy_main'){echo $strings['lucy_comment'];}?>"><?php echo $c_wr_content;  ?></textarea>
 					<?php if ($comment_min || $comment_max) { ?><script> check_byte('wr_content', 'char_count'); </script><?php } ?>
 					<div class="input-group-append">
 						<button <?php echo ($is_paging) ? 'type="button" onclick="na_comment(\'viewcomment\');"' : 'type="submit"';?> class="btn btn-primary px-4" onKeyDown="na_comment_onKeyDown(<?php echo $is_paging?>);" id="btn_submit">등록</button>
