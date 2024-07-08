@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main  # 원하는 브랜치를 지정합니다.
+  workflow_dispatch:  # 수동으로 워크플로우를 트리거하기 위한 설정입니다.
 
 jobs:
-  deploy:
+  deploy-dev:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,18 +19,50 @@ jobs:
 
     - name: List files
       run: ls -la
-  
 
     - name: Install sshpass
       run: sudo apt-get install -y sshpass
 
-    - name: Deploy via SCP with password
+    - name: Deploy to Development Server
       run: |
-         sshpass -p ${{ secrets.FTP_PASSWORD }} rsync -avz --exclude={'config.php','data'}   -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/AdelaideInside/AdelaideInside/* ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/root/aidev
+         sshpass -p ${{ secrets.FTP_PASSWORD_DEV }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/AdelaideInside/AdelaideInside/* ${{ secrets.FTP_USERNAME_DEV }}@${{ secrets.FTP_SERVER_DEV }}:/root/aidev
 
-    - name: Restart Docker container  # Docker 컨테이너를 재시작합니다.
-      run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
+    - name: Restart Docker container on Development Server
+      run: sshpass -p ${{ secrets.FTP_PASSWORD_DEV }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME_DEV }}@${{ secrets.FTP_SERVER_DEV }} "docker restart DevAI"
       env:
-        FTP_SERVER: ${{ secrets.FTP_SERVER }}  # FTP 서버 주소를 Secrets에서 가져와 환경 변수로 설정합니다.
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
+        FTP_SERVER_DEV: ${{ secrets.FTP_SERVER_DEV }}
+        FTP_USERNAME_DEV: ${{ secrets.FTP_USERNAME_DEV }}
+        FTP_PASSWORD_DEV: ${{ secrets.FTP_PASSWORD_DEV }}
+
+    # Slack 알림을 보내는 단계 추가
+    - name: Notify Slack and Request Approval
+      if: always()  # 항상 실행되도록 설정합니다.
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: www-be
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+        if_mention: failure,cancelled
+        text: |
+          Deployment to development server completed successfully.
+          Please approve deployment to production.
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정
+
+ # deploy-prod:
+ #   needs: deploy-dev  # deploy-dev 작업이 성공적으로 완료된 후에 실행됩니다.
+ #   runs-on: ubuntu-latest
+ #   if: github.event_name == 'workflow_dispatch'  # 수동 트리거에 의해 트리거됩니다.
+#
+ #   steps:
+ #   - name: Request Approval and Deploy to Production Server
+ #     if: github.event_name == 'workflow_dispatch'
+ #     run: |
+ #       curl -X POST -H 'Content-type: application/json' --data '{"text":"Approval request: Deployment to production server. Click here to approve: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"}' $SLACK_WEBHOOK_URL
+ #       sshpass -p ${{ secrets.FTP_PASSWORD_PROD }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/AdelaideInside/AdelaideInside/* ${{ secrets.FTP_USERNAME_PROD }}@${{ secrets.FTP_SERVER_PROD }}:/root/aidev
+ #       sshpass -p ${{ secrets.FTP_PASSWORD_PROD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME_PROD }}@${{ secrets.FTP_SERVER_PROD }} "docker restart ProdAI"
+ #     env:
+ #       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정
+ #       FTP_SERVER_PROD: ${{ secrets.FTP_SERVER_PROD }}
+ #       FTP_USERNAME_PROD: ${{ secrets.FTP_USERNAME_PROD }}
+ #       FTP_PASSWORD_PROD: ${{ secrets.FTP_PASSWORD_PROD }}
