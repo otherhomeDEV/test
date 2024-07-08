@@ -35,16 +35,25 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
 
    # Slack 알림을 보내는 단계 
-    - name: Send Approval Request
-      if: always()  # 항상 실행되도록 설정합니다.
-       uses: varu3/slack-approval@main
-      with:
-        status: ${{ job.status }}
-        author_name: www-be
-        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-        if_mention: failure,cancelled
-        text: "Deployment to DEV server completed successfully. Please approve deployment to production."
-        github_token: ${{ secrets.ACCESS_TOKEN}}
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정
+
+    - name: send approval
+        uses: varu3/slack-approval@main
+        env:
+          SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+        timeout-minutes: 10
+    #- name: Send Approval Request
+    #  if: always()  # 항상 실행되도록 설정합니다.
+    #  uses: 8398a7/action-slack@v3
+    #  with:
+    #    status: ${{ job.status }}
+    #    author_name: www-be
+    #    fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+    #    if_mention: failure,cancelled
+    #    text: "Deployment to DEV server completed successfully. Please approve deployment to production."
+    #    github_token: ${{ secrets.ACCESS_TOKEN}}
+    #  env:
+    #    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정
      
