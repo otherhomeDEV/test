@@ -36,7 +36,11 @@ jobs:
 
    # Slack 알림을 보내는 단계 
 
-    - name: send approval
+  approval:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send approval request
         uses: varu3/slack-approval@main
         env:
           SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN }}
