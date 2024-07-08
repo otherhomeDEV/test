@@ -34,7 +34,7 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
 
-   # Slack 승인요청을 보내기sdwd
+   # Slack 승인요청을 보내기
 
   approval:
     needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행
