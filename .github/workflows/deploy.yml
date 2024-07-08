@@ -37,7 +37,7 @@ jobs:
    # Slack 알림을 보내는 단계 
     - name: Send Approval Request
       if: always()  # 항상 실행되도록 설정합니다.
-      uses: 8398a7/action-slack@v3
+       uses: varu3/slack-approval@main
       with:
         status: ${{ job.status }}
         author_name: www-be
