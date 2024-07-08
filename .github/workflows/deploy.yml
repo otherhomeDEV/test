@@ -37,6 +37,7 @@ jobs:
    # Slack 알림을 보내는 단계 
 
   approval:
+    needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행됩니다
     runs-on: ubuntu-latest
 
     steps:
