@@ -34,7 +34,7 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
 
-   # Slack 알림을 보내는 단계 추가
+   # Slack 알림을 보내는 단계 
     - name: Notify Slack
       if: always()  # 항상 실행되도록 설정합니다.
       uses: 8398a7/action-slack@v3
