@@ -35,49 +35,37 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
 
    # Slack 알림을 보내는 단계 
-    - name: Send Slack Approval Request
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{
-            "text": "Approval request: Please review and approve the changes.",
-            "attachments": [
+     - name: Send Slack Approval Request
+        if: always()  # 항상 실행되도록 설정합니다.
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: www-be
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          if_mention: failure,cancelled
+          text: |
+            <!here> Approval request: Please review and approve the changes.
+          attachments: '[{
+            "fallback": "You are unable to approve the changes",
+            "callback_id": "approval_request",
+            "actions": [
               {
-                "fallback": "You are unable to approve the changes",
-                "callback_id": "approval_request",
-                "actions": [
-                  {
-                    "name": "approval",
-                    "text": "Approve",
-                    "type": "button",
-                    "style": "primary",
-                    "value": "approve"
-                  },
-                  {
-                    "name": "approval",
-                    "text": "Reject",
-                    "type": "button",
-                    "style": "danger",
-                    "value": "reject"
-                  }
-                ]
+                "name": "approval",
+                "text": "Approve",
+                "type": "button",
+                "style": "primary",
+                "value": "approve"
+              },
+              {
+                "name": "approval",
+                "text": "Reject",
+                "type": "button",
+                "style": "danger",
+                "value": "reject"
               }
             ]
-          }' $SLACK_WEBHOOK_URL
-
-      - name: Wait for Approval
-        id: approval
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /conversations/list
-          access_token: ${{ secrets.SLACK_ACCESS_TOKEN }}
-          query: '{"limit":1}'
-
-      - name: Process Approval
-        if: steps.approval.outputs.status == 'approve'
-        run: echo "Approval received. Proceeding with the workflow."
-
-      - name: Handle Rejection
-        if: steps.approval.outputs.status == 'reject'
-        run: echo "Changes rejected. Terminating the workflow."
+          }]'
+          channel: "#general"  # Slack 채널 설정
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹훅 URL 설정
      
