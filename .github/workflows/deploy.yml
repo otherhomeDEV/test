@@ -54,7 +54,7 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
    
-    environment: kayden
+    #environment: kayden
     steps:
       - run: echo asked for approval kayden-hyunsikkim
 
