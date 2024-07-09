@@ -236,10 +236,7 @@ if ($board['bo_table'] === 'store' && empty($sca))  {
 	
 	include_once(G5_PATH.'/googlemap.php');
 
-	echo "작동은 하나 파일 내의 코드를 불러오지 못함";
-	// 수정 필요 및 예정 (에러 없이 안 나옴)
 }
-
 
 
 else if($board['bo_table'] !== 'store' && $member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id)){
