@@ -50,13 +50,7 @@ jobs:
   #        SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
   #      timeout-minutes: 15
 
-   approval:
-    needs: deploy
-    runs-on: ubuntu-latest
-   
-    #environment: kayden
-    steps:
-      - run: echo asked for approval kayden-hyunsikkim
+ 
 
     #- name: Send Approval Request 되라
     #  if: always()  # 항상 실행되도록 설정합니다.
