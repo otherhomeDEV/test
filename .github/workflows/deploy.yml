@@ -46,8 +46,8 @@ jobs:
        - run: echo 'production deployment'      
 
    Prodeploy:
-     needs: production
      runs-on: ubuntu-latest
+     needs: production
  
      steps:
        - name: Install sshpass
