@@ -6,7 +6,7 @@ on:
       - main  # 원하는 브랜치를 지정합니다.
 
 jobs:
-  deploy:
+  Devdeploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -45,7 +45,11 @@ jobs:
        - uses: actions/checkout@v2
        - run: echo 'production deployment'      
 
-  
+   Prodeploy:
+    needs: production
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
@@ -59,7 +63,8 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-  # Slack 승인요청을 보내기
+
+   # Slack 승인요청을 보내기
 
   #approval:
   #  needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행
