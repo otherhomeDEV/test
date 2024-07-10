@@ -12,5 +12,5 @@ jobs:
     environment:
       name: production
     steps:
-        uses: actions/checkout@v2
-        run: echo 'production deployment'
+       - uses: actions/checkout@v2
+       - run: echo 'production deployment'
