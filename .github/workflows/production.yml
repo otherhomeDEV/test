@@ -6,20 +6,7 @@ on:
 
 
 jobs:
-  check-env:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      - name: Print current directory
-        run: pwd
-
-      - name: List files
-        run: ls -la     
- 
   production:
-    needs: deploy # 다른 워크플로우(job)가 완료된 후에 실행됩니다.
     runs-on: ubuntu-latest
 
     environment: production
