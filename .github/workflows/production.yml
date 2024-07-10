@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main  # 원하는 브랜치를 지정합니다.
+    workflow_dispatch:
 
 jobs:
   production:
