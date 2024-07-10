@@ -7,24 +7,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 </div>
 
 
-				 <!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en" style="margin-top:30px;" >
-						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=event">
-							테스트 구글맵
-						</a>
-					</h3>
-					<hr class="hr"/>
-					<div class="mt-3 mb-4">
-	       <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 -->
-		   
-		 
-
-		    <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 --> <!--구글 맵 유닛 들어갈 자리 -->
-        
-					</div>
-					<!-- } 위젯 끝-->
-
-
 	               <!-- 위젯 시작 { -->
 					<h3 class="h3 f-lg en" style="margin-top:30px;" >
 						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=event">
@@ -59,39 +41,15 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 						<?php echo na_widget('wr-list', 'tlist-3', 'gr_id=property'); ?>
 					</div>
 					<!-- } 위젯 끝-->
-					<h3 class="h3 f-lg en">
-			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
-				    댓글 갯수 랭킹
-				</a>
+
+  <h3 class="h3 f-lg en" style="margin-top:49px;">
+				    게시물 갯수 랭킹
 			</h3>
 
 			<hr class="hr"/>
 			<div class="px-3 px-sm-0 mt-3 mb-4"> <!--style="height:220px;"> 위젯 레이아웃 아래마진 - kayden { -->
 			<?php echo na_widget('rank', 'mb-rank-1') ?>
 			</div>
-
-			<h3 class="h3 f-lg en" style="margin-top:49px;">
-				    댓글 갯수 랭킹
-			</h3>
-
-			<hr class="hr"/>
-			<div class="px-3 px-sm-0 mt-3 mb-4"> 
-			<?php echo na_widget('rank', 'mb-rank-1') ?>
-			</div>
-
-
-			<h3 class="h3 f-lg en">
-			<a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
-				    직원들 게시물 갯수 랭킹 
-				</a>
-			</h3>
-
-			<hr class="hr"/>
-			<div class="px-3 px-sm-0 mt-3 mb-4"> <!--style="height:220px;"> 위젯 레이아웃 아래마진 - kayden { -->
-			<?php echo na_widget('rank2', 'mb-rank-1') ?>
-			</div>
-
-
 
 
 <div class="mt-3 mb-4" style="width: 100%; overflow: hidden;">

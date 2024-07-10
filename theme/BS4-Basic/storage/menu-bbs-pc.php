@@ -260,7 +260,7 @@ $data=array (
       0 => 
       array (
         'text' => '  맛집 & 여행',
-        'href' => 'http://localhost:8080/bbs/group.php?gr_id=food',
+        'href' => 'https://adelaideinside.com/bbs/group.php?gr_id=food',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -355,17 +355,5 @@ $data=array (
         'id' => 'link',
       ),
     ),
-  ),
-  6 => 
-  array (
-    'text' => 'test',
-    'icon' => 'empty',
-    'href' => '#',
-    'target' => '_self',
-    'line' => '',
-    'sp' => '',
-    'limit' => '',
-    'grade' => 0,
-    'id' => 'link',
   ),
 );
