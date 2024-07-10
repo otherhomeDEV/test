@@ -9,8 +9,9 @@ jobs:
   production:
     needs: deploy # 다른 워크플로우(job)가 완료된 후에 실행됩니다.
     runs-on: ubuntu-latest
-    environment:
-      name: production
+
+    environment: production
+
     steps:
        - uses: actions/checkout@v2
        - run: echo 'production deployment'
