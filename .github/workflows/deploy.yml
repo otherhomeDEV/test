@@ -37,7 +37,7 @@ jobs:
 # 승인보내기
   production:
     runs-on: ubuntu-latest
-    needs : deploy
+    needs : Devdeploy
 
     environment: production
 
