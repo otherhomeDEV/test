@@ -36,9 +36,9 @@ jobs:
 
    # Slack 승인요청을 보내기
 
-  approval:
-    needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행
-    runs-on: ubuntu-latest
+  #approval:
+  #  needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행
+  #  runs-on: ubuntu-latest
 
     #steps:
     #  - name: Send approval request
@@ -50,11 +50,11 @@ jobs:
     #      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
     #    timeout-minutes: 15
      
-    steps:
-      - name: Request Approval from kayden
-        env:
-          ENVIRONMENT: kayden
-        run: echo "Asked for approval from $ENVIRONMENT"   
+    #steps:
+    #  - name: Request Approval from kayden
+    #    env:
+    #      ENVIRONMENT: kayden
+    #    run: echo "Asked for approval from $ENVIRONMENT"   
 
  
 
