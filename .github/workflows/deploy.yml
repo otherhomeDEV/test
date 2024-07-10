@@ -32,7 +32,7 @@ jobs:
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}  # FTP 서버 주소를 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다..
 
    # Slack 승인요청을 보내기
 
