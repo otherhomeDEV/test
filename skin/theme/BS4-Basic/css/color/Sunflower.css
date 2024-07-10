@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+.btn-primary,
+.btn-primary.disabled, 
+.btn-primary:disabled,
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled):active, 
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.page-item.active .page-link,
+.show > .btn-outline-primary.dropdown-toggle,
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+	background-color: #ffc51b !important;
+	border-color: #ffffff !important;
+}
+
+
+/* 전체메뉴색 */
+hr.hr::after,
+.dropdown-item.active, 
+.dropdown-item:active,
+.bg-primary {
+	background-color:  #05a9a8 !important;
+}
+
+
+/* 검색창색 */
+.border-primary {
+	border-color: #05a9a8 !important;
+}
+
+
+/* 로딩색 */
+.text-primary,
+.btn-outline-primary.disabled, 
+.btn-outline-primary:disabled {
+	color : #05a9a8 !important;
+}
+
+
+/* ---------------------------------------------------------- */
+
+/* 로그인호버*/
+.btn-primary:focus, 
+.btn-primary.focus,
+.btn-primary:hover {
+	background-color:  #f7df93 !important;
+	border-color: #ffffff !important;
+}
+
+.btn-outline-primary {
+	color: #00D1B2 !important;
+	border-color: #ffffff !important;
+}
+
+.btn-outline-primary:hover {
+	color: #00D1B2 !important;
+}
+
+
+/* 호버색 */
+a.bg-primary:hover, 
+a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+	background-color:  #a2eeeb !important;
+}
+
+.btn-primary:focus, 
+.btn-primary.focus,
+.btn-outline-primary:focus, 
+.btn-outline-primary.focus,
+.custom-control-input:focus ~ .custom-control-label::before {
+	box-shadow: 0 0 0 5 #ffffff !important;
+}

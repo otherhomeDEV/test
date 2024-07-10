@@ -5,7 +5,7 @@ $data=array (
   array (
     'img' => 
     array (
-      0 => '../storage/image/title-Untitled design (4).png',
+      0 => '../storage/image/title-main logo.jpg',
       1 => '../storage/image/title-banner-choisbutcher-400x225.jpg',
       2 => '../storage/image/title-Untitled design (5).png',
       3 => '../storage/image/title-banner-studysa-400x225.jpg',
@@ -13,7 +13,7 @@ $data=array (
     ),
     'link' => 
     array (
-      0 => 'https://otherhome.com.au/',
+      0 => 'https://otherhome.org',
       1 => 'http://www.choisbutcher.com/',
       2 => 'https://ko.home4u.au/',
       3 => 'http://www.studysa.com.au/',

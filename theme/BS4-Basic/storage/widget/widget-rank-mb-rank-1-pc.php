@@ -1,11 +1,11 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 $data=array (
-  'mb_list' => 'chunpung2,iamjay,adelaideinside,Kayden,jjhtesy,popul9,iamjay3,yjleejimmy,otherhome,IamJay2,donalmum525,radcar',
+  'mb_list' => 'chunpung2,iamjay,adelaideinside,Kayden,jjhtesy,popul9,iamjay3,yjleejimmy,otherhome,IamJay2,donalmum525',
   'cache' => '',
   'rank' => '',
-  'mode' => 'point',
+  'mode' => 'post',
   'rows' => '',
-  'term' => 'month',
-  'dayterm' => '',
+  'term' => 'day',
+  'dayterm' => '31',
 );
