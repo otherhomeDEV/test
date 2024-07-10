@@ -34,7 +34,7 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}  # FTP 사용자 이름을 Secrets에서 가져와 환경 변수로 설정합니다.
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # FTP 비밀번호를 Secrets에서 가져와 환경 변수로 설정합니다.
 
-# 승인 보내기
+# 승인보내기
   production:
     runs-on: ubuntu-latest
     needs : deploy
@@ -44,6 +44,25 @@ jobs:
     steps:
        - uses: actions/checkout@v2
        - run: echo 'production deployment'      
+
+   deploy-to-server:
+    needs: production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy via SCP with password
+        run: |
+          sshpass -p ${{ secrets.FTP_PASSWORD }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/test/test/* ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/root/aidev
+
+      - name: Restart Docker container
+        run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
 
    # Slack 승인요청을 보내기
 
