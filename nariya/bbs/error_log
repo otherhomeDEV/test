@@ -1,0 +1,89 @@
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/hook.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 138
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/hook.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 138
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/get_data.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 139
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/get_data.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 139
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/cache.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 140
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/cache.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 140
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/uri.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 141
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/uri.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 141
+[27-Nov-2023 17:58:55 Australia/Adelaide] PHP Fatal error:  Uncaught Error: Class "G5_object_cache" not found in /home15/cp226428/public_html/common.php:143
+Stack trace:
+#0 /home15/cp226428/public_html/nariya/bbs/_common.php(2): include_once()
+#1 /home15/cp226428/public_html/nariya/bbs/sns.php(2): include_once('/home15/cp226428/...')
+#2 {main}
+  thrown in /home15/cp226428/public_html/common.php on line 143
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/hook.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 138
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/hook.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 138
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/get_data.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 139
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/get_data.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 139
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/cache.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 140
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/cache.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 140
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(/var/www/gnuboard5/lib/uri.lib.php): Failed to open stream: No such file or directory in /home15/cp226428/public_html/common.php on line 141
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Warning:  include_once(): Failed opening '/var/www/gnuboard5/lib/uri.lib.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home15/cp226428/public_html/common.php on line 141
+[27-Nov-2023 18:45:51 Australia/Adelaide] PHP Fatal error:  Uncaught Error: Class "G5_object_cache" not found in /home15/cp226428/public_html/common.php:143
+Stack trace:
+#0 /home15/cp226428/public_html/nariya/bbs/_common.php(2): include_once()
+#1 /home15/cp226428/public_html/nariya/bbs/sns.php(2): include_once('/home15/cp226428/...')
+#2 {main}
+  thrown in /home15/cp226428/public_html/common.php on line 143
+[27-Nov-2023 21:50:07 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[27-Nov-2023 22:04:41 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[27-Nov-2023 22:18:36 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[27-Nov-2023 22:43:35 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 05:48:20 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 06:33:04 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:46:24 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:47:37 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:47:41 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:47:45 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:47:48 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:47:59 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 10:48:08 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 11:19:55 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[28-Nov-2023 15:27:22 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[29-Nov-2023 06:19:47 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[29-Nov-2023 09:53:58 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[29-Nov-2023 22:12:25 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[29-Nov-2023 22:12:42 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[30-Nov-2023 15:28:44 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 04:25:40 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:04 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:08 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:14 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:19 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:32 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 09:51:41 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 17:21:13 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 17:59:41 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 19:10:43 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 20:17:21 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 22:49:55 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[01-Dec-2023 23:21:06 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 00:50:27 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 01:31:36 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 02:50:24 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 03:27:52 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 07:12:05 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:50:36 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:50:44 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:50:57 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:51:09 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:51:38 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:03 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:12 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:19 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:28 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:36 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:52:43 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 10:53:01 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 11:33:50 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[02-Dec-2023 14:51:31 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[03-Dec-2023 11:43:43 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[04-Dec-2023 00:35:01 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[04-Dec-2023 03:42:33 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[04-Dec-2023 17:14:38 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[04-Dec-2023 19:41:39 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[05-Dec-2023 19:24:25 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[05-Dec-2023 23:54:46 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[06-Dec-2023 01:23:11 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
+[06-Dec-2023 10:17:33 Australia/Adelaide] PHP Warning:  Undefined array key "path" in /home15/cp226428/public_html/common.php on line 395
