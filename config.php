@@ -24,8 +24,8 @@ date_default_timezone_set("Australia/Adelaide");
 보안서버주소가 없다면 공란으로 두시면 되며 보안서버주소 뒤에 / 는 붙이지 않습니다.
 입력예) https://www.domain.com:443/gnuboard5
 */
-define('G5_DOMAIN', 'https://adelaideinside.com');
-define('G5_HTTPS_DOMAIN', 'https://adelaideinside.com');
+define('G5_DOMAIN', 'http://localhost:8080/');
+define('G5_HTTPS_DOMAIN', '');
 
 // 디버깅 상수, 실제 서버운영시 false 로 설정해 주제요.
 define('G5_DEBUG', true);
