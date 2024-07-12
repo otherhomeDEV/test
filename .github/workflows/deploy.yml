@@ -82,18 +82,18 @@ jobs:
      needs: Prodeploy
 
      steps:
-      - name: Bump version and push tag
-          id: tag_version
-          uses: mathieudutour/github-tag-action@v6.1 
-          with:
-            github_token: ${{ secrets.ACCESS_TOKEN }} 
-      - name: Release 생성 
-        uses: ncipollo/release-action@v1 
-        with: 
-           tag: ${{ steps.version_name.outputs.version }} 
-           name: ${{ steps.version_name.outputs.version }}
-           body: ${{ steps.tag_version.outputs.changelog }}
- 
+       - name: Bump version and push tag
+           id: tag_version
+           uses: mathieudutour/github-tag-action@v6.1 
+           with:
+             github_token: ${{ secrets.ACCESS_TOKEN }} 
+       - name: Release 생성 
+         uses: ncipollo/release-action@v1 
+         with: 
+            tag: ${{ steps.version_name.outputs.version }} 
+            name: ${{ steps.version_name.outputs.version }}
+            body: ${{ steps.tag_version.outputs.changelog }}
+  
   #approval:
   #  needs: deploy  # deploy 작업이 완료된 후에 approval 작업이 실행
   #  runs-on: ubuntu-latest
