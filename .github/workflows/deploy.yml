@@ -89,6 +89,7 @@ jobs:
       - name: Release 생성
         uses: ncipollo/release-action@v1 
         with: 
+          token: ${{ secrets.ACCESS_TOKEN }}
           tag: ${{ steps.tag_version.outputs.new_tag }} 
           name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
