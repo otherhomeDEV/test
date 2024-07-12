@@ -81,11 +81,16 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
 
+      - name: Check if new_tag exists
+        id: check_tag
+        run: |
+          echo "NEW_TAG=${{ steps.tag_version.outputs.new_tag }}" >> $GITHUB_ENV    
+
       - name: Release 생성
         uses: ncipollo/release-action@v1 
         with: 
-          tag: ${{ steps.tag_version.outputs.version }} 
-          name: ${{ steps.tag_version.outputs.version }}
+          tag: ${{ steps.tag_version.outputs.new_tag }} 
+          name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
 
   #approval:
