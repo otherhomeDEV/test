@@ -63,8 +63,12 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y rsync
   
       - name: Deploy via SCP with password
-        run: |
-          sshpass -p ${{ secrets.CRAZY_PASSWORD }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/test/test/ads.txt ${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}:/root/adelaideinside
+        run: | 
+        tar --exclude='config.php' --exclude='data' -czf ads.tar.gz -C /home/runner/work/test/test ads.txt
+        
+        sshpass -p "${{ secrets.CRAZY_PASSWORD }}" scp -o StrictHostKeyChecking=no ads.tar.gz "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}:/root/adelaideinside"
+        
+        sshpass -p "${{ secrets.CRAZY_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}" 'tar -xzf /root/adelaideinside/ads.tar.gz -C /root/adelaideinside && rm /root/adelaideinside/ads.tar.gz'
 
       #- name: Restart Docker container
       #  run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
