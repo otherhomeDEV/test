@@ -60,7 +60,7 @@ jobs:
         run: sudo apt-get install -y sshpass
   
       - name: Deploy via SCP with password
-        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' -cvzf deployment.tar.gz --ignore-failed-read -C /home/runner/work/test/test .
+        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' -cvzf deployment.tar.gz --ignore-failed-read --overwrite -C /home/runner/work/test/test .
 
       - name: Transfer archive via SCP
         run: |
