@@ -60,35 +60,11 @@ jobs:
         run: sudo apt-get install -y sshpass
   
       - name: Deploy via SCP with password
-        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' -cvzf deployment.tar.gz --ignore-failed-read --overwrite -C /home/runner/work/test/test .
+        run: |
+          - tar --exclude='config.php' --exclude='data' --exclude='./.*' -cvzf deployment.tar.gz --ignore-failed-read -C /home/runner/work/test/test .
+          - sshpass -p "${{ secrets.CRAZY_PASSWORD }}" scp -o StrictHostKeyChecking=no deployment.tar.gz "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}:/home/${{ secrets.CRAZY_USERNAME }}/adelaideinside"
+          
 
-      - name: Transfer archive via SCP
-        run: |
-          if [ $? -eq 0 ]; then
-            echo "Archive creation succeeded."
-            sshpass -p "${{ secrets.CRAZY_PASSWORD }}" scp -o StrictHostKeyChecking=no deployment.tar.gz "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}:/home/${{ secrets.CRAZY_USERNAME }}/adelaideinside"
-            if [ $? -eq 0 ]; then
-              echo "SCP transfer succeeded."
-            else
-              echo "SCP transfer failed."
-              exit 1
-            fi
-          else
-            echo "Failed to create archive."
-            exit 1
-          fi
-      
-      - name: Extract and clean up remote archive
-        run: |
-          if [ $? -eq 0 ]; then
-            sshpass -p "${{ secrets.CRAZY_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}" 'tar -xzf /home/${{ secrets.CRAZY_USERNAME }}/adelaideinside/deployment.tar.gz -C /home/${{ secrets.CRAZY_USERNAME }}/public_html && rm /home/${{ secrets.CRAZY_USERNAME }}/adelaideinside/deployment.tar.gz'
-            if [ $? -eq 0 ]; then
-              echo "Remote extraction and cleanup succeeded."
-            else
-              echo "Failed to extract or clean up remote archive."
-              exit 1
-            fi
-          fi  
              
              
                
@@ -98,6 +74,7 @@ jobs:
       #    FTP_SERVER: ${{ secrets.FTP_SERVER }}
       #    FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       #    FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      # - sshpass -p "${{ secrets.CRAZY_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}" 'tar -xzf /home/${{ secrets.CRAZY_USERNAME }}/adelaideinside/deployment.tar.gz -C /home/${{ secrets.CRAZY_USERNAME }}/public_html && rm /home/${{ secrets.CRAZY_USERNAME }}/adelaideinside/deployment.tar.gz'
 
   ReleaseTag:
     runs-on: ubuntu-latest
