@@ -120,7 +120,7 @@ if ((isset($wr_id) && $wr_id) || (isset($wr_seo_title) && $wr_seo_title)) {
     $Rand1 = rand(1, 2);
     $Rand2 = rand(3, 5);
   
-
+    sql_query(" update {$write_table} set wr_hit = wr_hit + 1 where wr_id = '{$wr_id}' "); // 새로고침 할때마다 조회수 올라가게 하기위해 수정됨
     // 한번 읽은글은 브라우저를 닫기전까지는 카운트를 증가시키지 않음
     $ss_name = 'ss_view_'.$bo_table.'_'.$wr_id;
     if (!get_session($ss_name))
