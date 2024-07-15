@@ -61,14 +61,14 @@ jobs:
 
       - name: Deploy via SCP with password
         run: |
-          sshpass -p ${{ secrets.FTP_PASSWORD }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/test/test/* ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/root/aidev
+          sshpass -p ${{ secrets.CRAZY_PASSWORD }} rsync -avz --exclude={'config.php','data'} -e "ssh -o StrictHostKeyChecking=no" /home/runner/work/test/test/ads.txt ${{ secrets.CRAZY_USERNAME }}@${{ secrets.CRAZY_SERVER }}:/root/adelaideinside
 
-      - name: Restart Docker container
-        run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      #- name: Restart Docker container
+      #  run: sshpass -p ${{ secrets.FTP_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} "docker restart DevAI"
+      #  env:
+      #    FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      #    FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      #    FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
 
   ReleaseTag:
     runs-on: ubuntu-latest
