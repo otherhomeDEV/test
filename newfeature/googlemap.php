@@ -4,7 +4,7 @@
 ?>
 
 <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCUIgUSAPAgD7gAdxZkwbSacEREeC8TU&callback=initMap&v=weekly"
       defer
     ></script>
 
