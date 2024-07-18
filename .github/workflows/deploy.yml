@@ -59,8 +59,16 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
   
-      - name: Deploy via SCP with password
-        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' --exclude=*.tar.gz --ignore-failed-read -cvzf deployment.tar.gz --overwrite -C /home/runner/work/test/test .
+      - name: Create tarball
+        run: |
+          set +e
+          tar --warning=none --exclude='config.php' --exclude='data' --exclude='./.*' --exclude=*.tar.gz --ignore-failed-read -cvzf deployment.tar.gz --overwrite -C /home/runner/work/test/test .
+          exitcode=$?
+  
+          if [ "$exitcode" != "1" ] && [ "$exitcode" != "0" ]; then
+              exit $exitcode
+          fi
+          set -e
 
       - name: Transfer archive via SCP
         run: |
