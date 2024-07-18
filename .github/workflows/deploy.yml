@@ -60,7 +60,7 @@ jobs:
         run: sudo apt-get install -y sshpass
   
       - name: Deploy via SCP with password
-        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' --exclude=*.tar.gz --ignore-failed-read -cvzf deployment.tar.gz --overwrite -C /home/runner/work/test/test .
+        run: tar --exclude='config.php' --exclude='data' --exclude='./.*' --exclude=*.tar.gz --ignore-failed-read -cvzf deployment.tar.gz --overwrite /home/runner/work/test/test .
 
       - name: Transfer archive via SCP
         run: |
@@ -156,5 +156,5 @@ jobs:
     #    text: "Deployment to DEV server completed successfully. Please approve deployment to production."
     #    github_token: ${{ secrets.ACCESS_TOKEN}}
     #  env:
-    #    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정d
+    #    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # Slack 웹후크 URL 설정
      
