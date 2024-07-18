@@ -147,10 +147,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-event_review',
-        'bo_table' => 'event_review',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
       5 => 
       array (
@@ -287,7 +284,7 @@ $data=array (
       0 => 
       array (
         'text' => '  맛집 & 여행',
-        'href' => 'https://adelaideinside.com/bbs/group.php?gr_id=food',
+        'href' => 'http://localhost:8080//bbs/group.php?gr_id=food',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -393,8 +390,7 @@ $data=array (
     'sp' => '',
     'limit' => '',
     'grade' => 0,
-    'id' => 'bbs-group-Lucy',
-    'gr_id' => 'Lucy',
+    'id' => 'link',
     's' => 
     array (
       0 => 
@@ -407,10 +403,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-Lucy_inform',
-        'bo_table' => 'Lucy_inform',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
       1 => 
       array (
@@ -422,10 +415,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-Lucy_main',
-        'bo_table' => 'Lucy_main',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
       2 => 
       array (
@@ -437,10 +427,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-Lucy_Pickup',
-        'bo_table' => 'Lucy_Pickup',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
       3 => 
       array (
@@ -452,10 +439,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-Lucy_review',
-        'bo_table' => 'Lucy_review',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
       4 => 
       array (
@@ -480,10 +464,7 @@ $data=array (
             'sp' => '',
             'limit' => '',
             'grade' => 0,
-            'id' => 'bbs-board-Lucy_donation',
-            'bo_table' => 'Lucy_donation',
-            'wr_id' => '',
-            'sca' => '',
+            'id' => 'link',
           ),
           1 => 
           array (
@@ -495,10 +476,7 @@ $data=array (
             'sp' => '',
             'limit' => '',
             'grade' => 0,
-            'id' => 'bbs-board-Lucy_communi',
-            'bo_table' => 'Lucy_communi',
-            'wr_id' => '',
-            'sca' => '',
+            'id' => 'link',
           ),
         ),
       ),
@@ -512,10 +490,7 @@ $data=array (
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-board-Lucy_change',
-        'bo_table' => 'Lucy_change',
-        'wr_id' => '',
-        'sca' => '',
+        'id' => 'link',
       ),
     ),
   ),
