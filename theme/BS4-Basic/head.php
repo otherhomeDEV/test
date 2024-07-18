@@ -145,6 +145,7 @@ $is_wing = ($tset['wing']) ? true : false;
 						<?php if(IS_NA_BBS) { // 게시판 플러그인 ?>
 							<li><a href="<?php echo G5_BBS_URL ?>/shingo.php">신고글</a></li>
 						<?php } ?>
+						<!--	
 						<li>
 						<?php if(isset($stats['now_total']) && $stats['now_total']) { ?>
 							<a href="<?php echo G5_BBS_URL ?>/current_connect.php">접속자 <?php echo number_format($stats['now_total']) ?><?php echo ($stats['now_mb']) ? ' (<b class="orangered">'.number_format($stats['now_mb']).'</b>)' : ''; ?></a>
@@ -152,6 +153,7 @@ $is_wing = ($tset['wing']) ? true : false;
 							<a href="<?php echo G5_BBS_URL ?>/current_connect.php">접속자</a>
 						<?php } ?>
 						</li>
+					    -->
 					<?php if($is_member) { ?>
 						<li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
 					<?php } ?>
