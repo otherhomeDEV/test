@@ -284,21 +284,20 @@ $data=array (
       0 => 
       array (
         'text' => '맛집 & 여행',
-        'href' => 'http://localhost:8080//bbs/group.php?gr_id=food',
+        'href' => '/bbs/group.php?gr_id=food',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
         'sp' => '',
         'limit' => '',
         'grade' => 0,
-        'id' => 'bbs-group-food',
-        'gr_id' => 'food',
+        'id' => 'link',
       ),
       1 => 
       array (
         'text' => '공연 & 축제',
-        'icon' => 'empty',
         'href' => '/bbs/board.php?bo_table=performance',
+        'icon' => 'empty',
         'target' => '_self',
         'line' => '',
         'sp' => '',
