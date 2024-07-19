@@ -1,14 +1,13 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 $data=array (
-  'nav' => '1',
   'cache' => '',
-  'bo_new' => '24',
+  'bo_new' => '',
   'new' => '',
   'rank' => '',
   'target' => '',
   'bo_name' => '',
-  'round' => '3',
+  'round' => '',
   'thumb_w' => '',
   'thumb_h' => '',
   'thumb_d' => '',
@@ -20,7 +19,7 @@ $data=array (
   'sm' => '3',
   'xs' => '2',
   'gr_list' => '',
-  'bo_list' => 'magazine',
+  'bo_list' => 'performance',
   'ca_list' => '',
   'mb_list' => '',
   'rows' => '',
