@@ -125,7 +125,7 @@ if ((isset($wr_id) && $wr_id) || (isset($wr_seo_title) && $wr_seo_title)) {
     $ss_name = 'ss_view_'.$bo_table.'_'.$wr_id;
     if (!get_session($ss_name))
     {
-        if($board['bo_table'] === 'magazine'|| $board['bo_table'] === 'Lucy_main' || $board['bo_table'] === 'notice'){
+        if($board['bo_table'] === 'magazine'|| $board['bo_table'] === 'Lucy_main' || $board['bo_table'] === 'notice' || $board['bo_table'] === 'performance'){
             sql_query(" update {$write_table} set wr_hit = wr_hit+".$Rand1." where wr_id = '{$wr_id}' "); // 새로고침 할때마다 조회수 올라가게 하기위해 수정됨
         }
         else {

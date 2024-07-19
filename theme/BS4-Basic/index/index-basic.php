@@ -100,7 +100,6 @@ if($is_wing)
 			<!-- } 위젯 끝-->
 
 			
-			
 
 			<!-- 위젯 시작 { -->
 			<h3 class="h3 f-lg en" style="margin-top:40px;">
@@ -113,6 +112,19 @@ if($is_wing)
 				<?php echo na_widget('wr-gallery', 'gallery-1', 'gr_id=food'); ?>
 			</div>
 			<!-- } 위젯 끝-->
+
+			<!-- 위젯 시작 { -->
+			<h3 class="h3 f-lg en" style="margin-top:20px;">
+        	<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=performance">
+            	공연 & 축제
+        	</a>
+    		</h3>
+    		<hr class="hr"/>
+    		<div class="px-3 px-sm-0 my-3">
+        		<?php echo na_widget('wr-gallery-slider', 'gallery-4', 'bo_list=gallery rows=8'); ?>
+    		</div>
+   			 <!-- } 위젯 끝-->
+
 
 			<!------------ 수다방 등 화면 하단 위젯들 필요시 uncomment 예정 ------------->
 			<!--<div class="row na-row">
