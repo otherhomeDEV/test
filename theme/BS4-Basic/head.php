@@ -124,6 +124,13 @@ $is_wing = ($tset['wing']) ? true : false;
 									관리자
 								</a>
 							</li>
+							<li>
+								<?php if(isset($stats['now_total']) && $stats['now_total']) { ?>
+									<a href="<?php echo G5_BBS_URL ?>/current_connect.php">접속자 <?php echo number_format($stats['now_total']) ?><?php echo ($stats['now_mb']) ? ' (<b class="orangered">'.number_format($stats['now_mb']).'</b>)' : ''; ?></a>
+								<?php } else { ?>
+									<a href="<?php echo G5_BBS_URL ?>/current_connect.php">접속자</a>
+								<?php } ?>
+							</li>			
 						<?php } ?>
 						<?php if(IS_NA_NOTI) { ?>
 						<li>
