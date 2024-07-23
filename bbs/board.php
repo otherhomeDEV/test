@@ -244,7 +244,7 @@ if (isset($wr_id) && $wr_id) {
     include_once(G5_BBS_PATH.'/view.php');
 }
 
-// 전체목록보이기 사용이 "예" 또는 wr_id 값이 없다면 목록을 보임
+// 전체목록보이기 사용이 "예" 또는 wr_id 값이 없다면 목록을 보임dd
 //if ($board['bo_use_list_view'] || empty($wr_id))
 //if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
 //    include_once (G5_BBS_PATH.'/list.php');
@@ -274,3 +274,6 @@ include_once(G5_BBS_PATH.'/board_tail.php');
 echo "\n<!-- 사용스킨 : ".(G5_IS_MOBILE ? $board['bo_mobile_skin'] : $board['bo_skin'])." -->\n";
 
 include_once(G5_PATH.'/tail.sub.php');
+
+
+
