@@ -246,8 +246,28 @@ if (isset($wr_id) && $wr_id) {
 
 // 전체목록보이기 사용이 "예" 또는 wr_id 값이 없다면 목록을 보임
 //if ($board['bo_use_list_view'] || empty($wr_id))
-if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
-    include_once (G5_BBS_PATH.'/list.php');
+//if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
+//    include_once (G5_BBS_PATH.'/list.php');
+
+// 'Lucy_main' 게시판이고 특정 조건을 만족하는지 확인
+//if ($board['bo_table'] === 'Lucy_main' 
+//    && $member['mb_level'] >= $board['bo_list_level'] 
+//    && $board['bo_use_list_view'] 
+//    || empty($wr_id)) {
+//
+//    // 기본 리스트 파일 포함
+//    include_once(G5_BBS_PATH . '/list.php');
+//
+//    // list_type에 따라 다른 스킨 파일 포함
+//    if ($list_type) {
+//        include_once(G5_PATH.'/skin/board/order-check-list/list.skin.php');
+//    } else {
+//        include_once("$board_skin_path/list.skin.php");
+//    }
+//}
+
+
+
 
 include_once(G5_BBS_PATH.'/board_tail.php');
 

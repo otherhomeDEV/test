@@ -1,0 +1,47 @@
+[1mdiff --git a/bbs/list.php b/bbs/list.php[m
+[1mindex 9a18a393..02a24db0 100644[m
+[1m--- a/bbs/list.php[m
+[1m+++ b/bbs/list.php[m
+[36m@@ -252,4 +252,6 @@[m [mif ($board['bo_use_rss_view']) {[m
+ }[m
+ [m
+ $stx = get_text(stripslashes($stx));[m
+[31m-include_once($board_skin_path.'/list.skin.php');[m
+\ No newline at end of file[m
+[32m+[m[32minclude_once($board_skin_path.'/list.skin.php');[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/common.php b/common.php[m
+[1mindex 99d01476..f6362679 100644[m
+[1m--- a/common.php[m
+[1m+++ b/common.php[m
+[36m@@ -364,6 +364,8 @@[m [mif (isset($_REQUEST['page'])) { // 리스트 페이지[m
+     $page = '';[m
+ }[m
+ [m
+[32m+[m
+[32m+[m
+ if (isset($_REQUEST['w'])) {[m
+     $w = substr($w, 0, 2);[m
+ } else {[m
+[1mdiff --git a/data/session/sess_puuaqkflsfcsa45s6bc2l1qejq b/data/session/sess_puuaqkflsfcsa45s6bc2l1qejq[m
+[1mindex 4555979d..76ea9e69 100644[m
+[1m--- a/data/session/sess_puuaqkflsfcsa45s6bc2l1qejq[m
+[1m+++ b/data/session/sess_puuaqkflsfcsa45s6bc2l1qejq[m
+[36m@@ -1 +1 @@[m
+[31m-ss_is_mobile|b:0;ss_mb_id|s:14:"adelaideinside";ss_mb_key|s:32:"090503a3ce26eb1a87bda0b140d3a821";HA::STORE|a:0:{}HA::CONFIG|a:0:{}sl_userprofile|s:0:"";social_login_redirect|s:0:"";token_8743aae5d2854bede5c109622bf|s:32:"b83f2828d69daf71d2383e3e0054713d";ss_admin_token|s:0:"";ss_admin_use_captcha|s:0:"";ss_view_test_53|b:1;ss_delete_token|s:23:"1721624482669de7a23b8f2";ss_view_test_24|b:1;ss_view_test_9|b:1;ss_view_test_4|b:1;ss_view_test_35|b:1;[m
+\ No newline at end of file[m
+[32m+[m[32mss_is_mobile|b:0;ss_mb_id|s:14:"adelaideinside";ss_mb_key|s:32:"090503a3ce26eb1a87bda0b140d3a821";HA::STORE|a:0:{}HA::CONFIG|a:0:{}sl_userprofile|s:0:"";social_login_redirect|s:0:"";token_8743aae5d2854bede5c109622bf|s:32:"b83f2828d69daf71d2383e3e0054713d";ss_admin_token|s:0:"";ss_admin_use_captcha|s:0:"";ss_view_test_53|b:1;ss_delete_token|s:23:"1721629974669dfd16ef81b";ss_view_test_24|b:1;ss_view_test_9|b:1;ss_view_test_4|b:1;ss_view_test_35|b:1;ss_delete_comment_10_token|s:23:"1721629954669dfd024e83d";ss_delete_comment_11_token|s:23:"1721629954669dfd024e8a0";ss_view_test_51|b:1;[m
+\ No newline at end of file[m
+[1mdiff --git a/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-3-mo.php b/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-3-mo.php[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mdiff --git a/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-3-pc.php b/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-3-pc.php[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mdiff --git a/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-4-mo.php b/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-4-mo.php[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mdiff --git a/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-4-pc.php b/theme/BS4-Basic/storage/widget/widget-wr-gallery-slider-gallery-4-pc.php[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
