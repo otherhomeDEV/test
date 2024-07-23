@@ -427,21 +427,6 @@ $data=array (
         'limit' => '',
         'grade' => 0,
         'id' => 'link',
-        's' => 
-        array (
-          0 => 
-          array (
-            'text' => '물건 주문 확인',
-            'icon' => 'empty',
-            'href' => '/bbs/board.php?bo_table=Lucy_main&amp;list_type=ok',
-            'target' => '_self',
-            'line' => '',
-            'sp' => '',
-            'limit' => '',
-            'grade' => 0,
-            'id' => 'link',
-          ),
-        ),
       ),
       2 => 
       array (
