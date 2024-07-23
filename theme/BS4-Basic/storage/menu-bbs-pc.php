@@ -419,7 +419,7 @@ $data=array (
       1 => 
       array (
         'text' => '루씨네 물건주문',
-        'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=Lucy_main',
+        'href' => '/bbs/board.php?bo_table=Lucy_main',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -427,6 +427,21 @@ $data=array (
         'limit' => '',
         'grade' => 0,
         'id' => 'link',
+        's' => 
+        array (
+          0 => 
+          array (
+            'text' => '물건 주문 확인',
+            'icon' => 'empty',
+            'href' => '/bbs/board.php?bo_table=Lucy_main&amp;list_type=ok',
+            'target' => '_self',
+            'line' => '',
+            'sp' => '',
+            'limit' => '',
+            'grade' => 0,
+            'id' => 'link',
+          ),
+        ),
       ),
       2 => 
       array (
