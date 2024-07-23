@@ -260,4 +260,8 @@ if ($board['bo_use_rss_view']) {
 na_demo_msg('board');
 
 $stx = get_text(stripslashes($stx));
-include_once($board_skin_path.'/list.skin.php');
+if($list_type){
+    include_once("$board_skin_path/order-check-list/list.skin.php");
+    }else{
+    include_once("$board_skin_path/list.skin.php");
+    }
