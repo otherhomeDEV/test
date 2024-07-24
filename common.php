@@ -364,7 +364,9 @@ if (isset($_REQUEST['page'])) { // 리스트 페이지
     $page = '';
 }
 
-
+if ($list_type) { // 신규리스트
+    $qstr .= '&list_type=$list_type';
+} 
 
 if (isset($_REQUEST['w'])) {
     $w = substr($w, 0, 2);
