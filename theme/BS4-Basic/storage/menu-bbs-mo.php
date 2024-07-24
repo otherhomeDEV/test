@@ -442,6 +442,18 @@ $data=array (
       ),
       3 => 
       array (
+        'text' => '중고/환전/나눔',
+        'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=Lucy_change',
+        'icon' => 'empty',
+        'target' => '_self',
+        'line' => '',
+        'sp' => '',
+        'limit' => '',
+        'grade' => 0,
+        'id' => 'link',
+      ),
+      4 => 
+      array (
         'text' => '루씨네 공구후기',
         'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=Lucy_review',
         'icon' => 'empty',
@@ -452,7 +464,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      4 => 
+      5 => 
       array (
         'text' => '루씨네 커뮤니티',
         'href' => '#',
@@ -490,18 +502,6 @@ $data=array (
             'id' => 'link',
           ),
         ),
-      ),
-      5 => 
-      array (
-        'text' => '중고/환전/나눔',
-        'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=Lucy_change',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
       ),
     ),
   ),
