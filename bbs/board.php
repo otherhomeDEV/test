@@ -246,8 +246,8 @@ if (isset($wr_id) && $wr_id) {
 
 // 전체목록보이기 사용이 "예" 또는 wr_id 값이 없다면 목록을 보임dd
 //if ($board['bo_use_list_view'] || empty($wr_id))
-//if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
-//    include_once (G5_BBS_PATH.'/list.php');
+if ($member['mb_level'] >= $board['bo_list_level'] && $board['bo_use_list_view'] || empty($wr_id))
+    include_once (G5_BBS_PATH.'/list.php');
 
 // 'Lucy_main' 게시판이고 특정 조건을 만족하는지 확인
 //if ($board['bo_table'] === 'Lucy_main' 
