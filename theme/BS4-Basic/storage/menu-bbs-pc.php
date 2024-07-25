@@ -430,7 +430,7 @@ $data=array (
       ),
       2 => 
       array (
-        'text' => '타지역 픽업 신청',
+        'text' => '타지역 배송 신청',
         'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=Lucy_Pickup',
         'icon' => 'empty',
         'target' => '_self',
