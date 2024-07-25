@@ -269,6 +269,7 @@ function findingStores(category) {
     function dropdownClick(category) {
         console.log(category);
         // 선택된 항목을 div에 표시
+        event.preventDefault(); // 기본 동작 방지 --> 구글맵 드랍다운 메뉴 선택시 새로고침 되어 맨 위로 가는 것을 방지
         updateSelection(category);
         findingStores(category);     
     }
