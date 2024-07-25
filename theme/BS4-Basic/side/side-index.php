@@ -43,9 +43,9 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					<div class="mt-3 mb-4">
 						<?php echo na_widget('wr-list', 'tlist-3', 'gr_id=property'); ?>
 					</div>
-
+					<div style="margin-top:97px;">
 				    <?php  include_once(G5_PATH.'/newfeature/googlemap.php');  ?>
-					
+					</div>
 					<!-- } 위젯 끝-->
 					
 					   <!-- 위젯 시작 { -->
