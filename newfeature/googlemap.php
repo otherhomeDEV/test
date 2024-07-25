@@ -205,7 +205,7 @@ function findingStores(category) {
         infoWindow.open({
             anchor: marker,
             map,
-            shouldFocus: true,
+            shouldFocus: false,
         });
       });
     }
