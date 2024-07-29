@@ -1,6 +1,7 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 $data=array (
+  'nav' => '1',
   'cache' => '',
   'bo_new' => '',
   'new' => '',
