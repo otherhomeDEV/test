@@ -103,7 +103,7 @@ $data=array (
       ),
       1 => 
       array (
-        'text' => '무엇이든 물어보세요!',
+        'text' => '뭐든지 물어보세요!',
         'href' => '/bbs/board.php?bo_table=QnA_2',
         'icon' => 'empty',
         'target' => '_self',
