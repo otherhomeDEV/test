@@ -1,8 +1,8 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 $data=array (
-  'thumb_w' => '165',
-  'thumb_h' => '225',
+  'thumb_w' => '200',
+  'thumb_h' => '350',
   'thumb_d' => '56.25%',
   'xl' => '',
   'lg' => '',
