@@ -74,6 +74,18 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
+      5 => 
+      array (
+        'text' => '투데이 인사이드',
+        'icon' => 'empty',
+        'href' => '/bbs/board.php?bo_table=todayinside',
+        'target' => '_self',
+        'line' => '',
+        'sp' => '',
+        'limit' => '',
+        'grade' => 0,
+        'id' => 'link',
+      ),
     ),
   ),
   1 => 
