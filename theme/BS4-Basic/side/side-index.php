@@ -8,10 +8,10 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 
                  
-					
+				
 
 	               <!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en" style="margin-top:30px;" >
+					 <!--<h3 class="h3 f-lg en" style="margin-top:30px;" >
 						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=event">
 							업체게시판 및 안내
 						</a>
@@ -23,7 +23,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					<!-- } 위젯 끝-->
 
                 <!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en" style="margin-top:42px;">
+					 <!--<h3 class="h3 f-lg en" style="margin-top:42px;">
 						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=findjob">
 							일자리
 						</a>
@@ -34,15 +34,32 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</div>
 					<!-- } 위젯 끝-->
                     <!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en" style="margin-top:42px;"> <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
-						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=share">
+					 <!--<h3 class="h3 f-lg en" style="margin-top:42px;"> <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
+						 <!--<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=share">
 							렌트/쉐어
 						</a>
 					</h3>
 					<hr class="hr"/>
 					<div class="mt-3 mb-4">
 						<?php echo na_widget('wr-list', 'tlist-3', 'gr_id=property'); ?>
+					</div>-->
+
+
+
+					<!-- 위젯 시작 { -->
+					<h3 class="h3 f-lg en" style="margin-top:40px;">
+					<a href="<?php echo G5_BBS_URL ?>/bbs/board.php?bo_table=todayinside">
+						투데이 인사이드
+					</a>
+					</h3>
+					<hr class="hr"/>
+					<div class="px-3 px-sm-0 my-3">
+						<?php echo na_widget('wr-gallery', 'gallery-5', 'bo_table=todayinside'); ?>
 					</div>
+					<!-- } 위젯 끝-->
+
+
+
 					<div style="margin-top:78px;">
 					<h3 class="h3 f-lg en" > <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=share">
