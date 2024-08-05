@@ -48,14 +48,16 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 					<!-- 위젯 시작 { -->
 					<h3 class="h3 f-lg en">
-					<a href="<?php echo G5_BBS_URL ?>/bbs/board.php?bo_table=todayinside">
+					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=todayinside">
 						투데이 인사이드
 					</a>
 					</h3>
 					<hr class="hr"/>
+					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=todayinside">
 					<div class="px-3 px-sm-0 my-3">
-						<?php echo na_widget('wr-gallery', 'gallery-5', 'bo_table=todayinside'); ?>
+						<img src="https://adelaideinside.com/data/editor/2408/thumb-606b454b6b4a625b8eb3816537c067ab_1722823162_545_400x225.png" alt="투데이인사이드썸네일" class="na-round" title="" style="width:245px;, height: 138px;">
 					</div>
+					</a>
 					<!-- } 위젯 끝-->
 
 
