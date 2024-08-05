@@ -47,7 +47,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 
 					<!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en" style="margin-top:40px;">
+					<h3 class="h3 f-lg en">
 					<a href="<?php echo G5_BBS_URL ?>/bbs/board.php?bo_table=todayinside">
 						투데이 인사이드
 					</a>
@@ -60,7 +60,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 
 
-					<div style="margin-top:78px;">
+					<div style="margin-top:17px;">
 					<h3 class="h3 f-lg en" > <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=share">
 							한인 업체 리스트
