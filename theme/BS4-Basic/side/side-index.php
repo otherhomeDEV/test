@@ -60,6 +60,21 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</a>
 					<!-- } 위젯 끝-->
 
+					<!-- 위젯 시작 { -->
+						<h3 class="h3 f-lg en">
+					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=todayinside">
+						웹사이트 만들어 드립니다
+					</a>
+					</h3>
+					<hr class="hr"/>
+					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=todayinside">
+					<div class="px-3 px-sm-0 my-3" style="text-align: center;">
+						<img src="https://adelaideinside.com/data/editor/2408/42ee3cad1f3459732a97668f14a889fe_1723435725_5547.png" alt="투데이인사이드썸네일" class="na-round" title="" style="width:245px;, height: 138px;">
+					</div>
+					</a>
+					<!-- } 위젯 끝-->
+
+
 
 
 					<div style="margin-top:0px;">
