@@ -235,7 +235,7 @@ if($is_wing)
 		</div>
 
 		<!-- 사이드 영역 -->
-		<div class="col-md-3 na-col" style="margin-top:10px;">
+		<div class="col-md-3 na-col" style="margin-top:8px;">
 			<?php @include_once(G5_THEME_PATH.'/side/side-index.php') ?>
 		</div>
 	</div>
