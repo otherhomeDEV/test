@@ -56,18 +56,19 @@ if($is_wing)
 				</div>
 				<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
-					<!-- 위젯 시작 { -->
-					<h3 class="h3 f-lg en">
-						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=used_item">
-							인사이드 마켓
-						</a>
-					</h3>
-					<hr class="hr"/>
-					<div class="mt-3 mb-4">
-						<?php echo na_widget('wr-list', 'tlist-4', 'gr_id=fleamarket'); ?>
-					</div>
-					<!-- } 위젯 끝-->
-
+					
+                    <!-- 위젯 시작 { -->
+                <h3 class="h3 f-lg en" >
+					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=findjob">
+						일자리
+					</a>
+                </h3>
+                <hr class="hr"/>
+                <div class="mt-3 mb-4">
+					<?php echo na_widget('wr-list', 'tlist-2', 'gr_id=jobs'); ?>
+                </div>
+                    <!-- } 위젯 끝-->
+					
 				</div>
 	
 			</div>
@@ -103,19 +104,18 @@ if($is_wing)
 				</div>
 				<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
-					
-                    <!-- 위젯 시작 { -->
-                <h3 class="h3 f-lg en" >
-					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=findjob">
-						일자리
-					</a>
-                </h3>
-                <hr class="hr"/>
-                <div class="mt-3 mb-4">
-					<?php echo na_widget('wr-list', 'tlist-2', 'gr_id=jobs'); ?>
-                </div>
-                    <!-- } 위젯 끝-->
-					
+					<!-- 위젯 시작 { -->
+					<h3 class="h3 f-lg en">
+						<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=used_item">
+							인사이드 마켓
+						</a>
+					</h3>
+					<hr class="hr"/>
+					<div class="mt-3 mb-4">
+						<?php echo na_widget('wr-list', 'tlist-4', 'gr_id=fleamarket'); ?>
+					</div>
+					<!-- } 위젯 끝-->
+
 				</div>
 				<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
