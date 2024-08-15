@@ -77,8 +77,20 @@ $data=array (
       5 => 
       array (
         'text' => '투데이 인사이드',
-        'icon' => 'empty',
         'href' => '/bbs/board.php?bo_table=todayinside',
+        'icon' => 'empty',
+        'target' => '_self',
+        'line' => '',
+        'sp' => '',
+        'limit' => '',
+        'grade' => 0,
+        'id' => 'link',
+      ),
+      6 => 
+      array (
+        'text' => '영사관 소식',
+        'icon' => 'empty',
+        'href' => '/bbs/board.php?bo_table=consulate',
         'target' => '_self',
         'line' => '',
         'sp' => '',
