@@ -16,18 +16,6 @@ $data=array (
     array (
       0 => 
       array (
-        'text' => '비자뉴스',
-        'href' => '/bbs/board.php?bo_table=visa',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      1 => 
-      array (
         'text' => '호주뉴스',
         'href' => '/bbs/board.php?bo_table=aus_news',
         'icon' => 'empty',
@@ -38,7 +26,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      2 => 
+      1 => 
       array (
         'text' => '한국뉴스',
         'href' => '/bbs/board.php?bo_table=kor_news',
@@ -50,7 +38,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      3 => 
+      2 => 
       array (
         'text' => '인사이드 뉴스',
         'href' => '/bbs/board.php?bo_table=notice',
@@ -62,7 +50,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      4 => 
+      3 => 
       array (
         'text' => '인사이드 매거진',
         'href' => '/bbs/board.php?bo_table=magazine',
@@ -74,7 +62,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      5 => 
+      4 => 
       array (
         'text' => '투데이 인사이드',
         'href' => '/bbs/board.php?bo_table=todayinside',
@@ -86,11 +74,11 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      6 => 
+      5 => 
       array (
         'text' => '영사관 소식',
-        'icon' => 'empty',
         'href' => '/bbs/board.php?bo_table=consulate',
+        'icon' => 'empty',
         'target' => '_self',
         'line' => '',
         'sp' => '',
@@ -153,30 +141,6 @@ $data=array (
       array (
         'text' => '워홀러 & 이민러',
         'href' => '/bbs/board.php?bo_table=workingholiday',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      4 => 
-      array (
-        'text' => '이벤트 상품 리뷰',
-        'href' => 'https://adelaideinside.com/bbs/board.php?bo_table=event_review',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      5 => 
-      array (
-        'text' => '피드백 받습니다!',
-        'href' => '/bbs/board.php?bo_table= feedback',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -379,18 +343,6 @@ $data=array (
       ),
       6 => 
       array (
-        'text' => '쇼핑 카탈로그',
-        'href' => '/bbs/board.php?bo_table=catalogue',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      7 => 
-      array (
         'text' => '경제 칼럼',
         'href' => '/bbs/board.php?bo_table=property_column',
         'icon' => 'empty',
@@ -401,7 +353,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      8 => 
+      7 => 
       array (
         'text' => '건강 칼럼',
         'href' => '/bbs/board.php?bo_table=medical',
