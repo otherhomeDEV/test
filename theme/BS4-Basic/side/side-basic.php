@@ -31,18 +31,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
                     
                    
 
-<!-- 위젯 시작 { -->
-<!--<h3 class="h3 f-lg en mb-1">
-	<a href="<?php echo G5_BBS_URL ?>/new.php?view=c">
-		<span class="float-right more-plus"></span>
-		새댓글
-	</a>
-</h3>
-<hr class="hr"/>
-<div class="mt-3 mb-4">
-	<.?php echo na_widget('wr-comment-list', 'new-co', 'bo_list=board'); ?>
-</div>-->
-<!-- } 위젯 끝-->
 
 <!-- 구글 광고 자리 (수정 진행 중)-->
 <div class="mt-3 mb-4" style="width: 100%; overflow: hidden;">
