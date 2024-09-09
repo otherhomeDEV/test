@@ -39,6 +39,7 @@ const tourStops = {
       [{ lat: -34.92306, lng: 138.60575 }, "KOrean COlor Hairsalon","56 Pulteney St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702621027_2335.png","https://maps.app.goo.gl/W1aGYtTxeHpnpxFT7"],
       [{ lat: -34.89021, lng: 138.65468 }, "Cozy Hair","Shop 6/474-476 Payneham Rd, Glynde SA 5070","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702620820_4782.png","https://maps.app.goo.gl/3BAAPSLZXMXEiLiD9"],
       [{ lat: -34.94762, lng: 138.62797 }, "Salon A by Genie","193A Glen Osmond Rd, Frewville SA 5063","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706571484_6158.png","https://maps.app.goo.gl/aGfkucKaRBucUnBZ9"],
+      [{ lat: -34.93113, lng: 138.61215 }, "Hair blooming","169 Hutt St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2404/97e24300f639bde58314eb5ec9319d41_1714364000_6797.png","https://maps.app.goo.gl/ASXZS7zgZ8z2itPA9"],
       // 추가적인 미용 tourstops을 여기에 추가
     ],
     
