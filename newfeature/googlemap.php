@@ -26,7 +26,7 @@ const tourStops = {
       // 추가적인 음식점 tourstops을 여기에 추가
     ],
     정비: [
-      [{ lat: -34.90997, lng: 138.68176 }, "A.R.M Mechanical Services","375A Main N Rd, Enfield SA 5085","https://adelaideinside.com/data/editor/2403/2c7e72113375b98191266b619d830656_1710736011_694.png","https://maps.app.goo.gl/A1RxPhtxC1RjLPH98"],
+      [{ lat: -34.86339, lng: 138.60185 }, "A.R.M Mechanical Services","375A Main N Rd, Enfield SA 5085","https://adelaideinside.com/data/editor/2403/2c7e72113375b98191266b619d830656_1710736011_694.png","https://maps.app.goo.gl/A1RxPhtxC1RjLPH98"],
       [{ lat: -34.90999, lng: 138.68178 }, "Green Crash Repairs","14 Hender Ave, Magill SA 5072","https://adelaideinside.com/data/editor/2312/91cd9edd5d55a5f2ee985364df6a3b81_1702602338_5552.png","https://maps.app.goo.gl/ehLrYSTh1XWHippo9"],
       // 추가적인 정비 tourstops을 여기에 추가
     ],
