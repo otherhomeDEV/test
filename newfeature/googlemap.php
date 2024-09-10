@@ -12,6 +12,7 @@
 
 const tourStops = {
     음식점: [
+      [{ lat: -35.01001, lng: 138.54604 }, "Alice kitchen" , "29b Dwyer Rd, Oaklands Park SA 5046" ,"https://adelaideinside.com/data/editor/2405/2a4bd28eb758b94da1677b1a5790fe3d_1715216779_5493.png","https://maps.app.goo.gl/R6Be7vfmDLNz4rbx9"],
       [{ lat: -35.02058, lng: 138.52303 }, "The Korean Vibe" , "513 Brighton Rd, Brighton SA 5048" ,"https://adelaideinside.com/data/editor/2401/8eb94b7344a02a8e5773374704e519ef_1704760025_1939.png","https://maps.app.goo.gl/swjUL48GYE4tr1Jz8"],
       [{ lat: -34.92984, lng: 138.59404 }, "Seoul Sweetie","270 morphett St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702517477_6954.png" ,"https://maps.app.goo.gl/GGdssvz8aDDq43179"],
       [{ lat: -34.92991, lng: 138.59422 }, "Busan Baby","272 Morphett St, Adelaide SA 5000", "https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702517007_7599.png","https://maps.app.goo.gl/Wt3zvJSCGZiBbj6A9"],
@@ -19,17 +20,19 @@ const tourStops = {
       [{ lat: -34.92759, lng: 138.59352 }, "반반 치킨","145 Franklin St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702516245_1096.png","https://maps.app.goo.gl/bCLqwwErqnSSt9oX7"],
       [{ lat: -34.92620, lng: 138.59575 }, "+82 고기","12 Eliza St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702514956_4662.jpg","https://maps.app.goo.gl/Sz1k9yepSdkUJqZc8"],
       [{ lat: -34.92477, lng: 138.60088 }, "+82 포차","shop 3/25 Grenfell St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702514195_8114.png","https://maps.app.goo.gl/g751ywGx5oS7mUmRA"],
-      [{ lat: -34.92991, lng: 138.59422 }, "주로흥할","15 Hindley St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702513514_0472.png","https://maps.app.goo.gl/hGYKrdfDhUoKHZEq5"],
       [{ lat: -34.93120, lng: 138.59589 }, "먹방","31 Field St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702512699_6875.png","https://maps.app.goo.gl/PpCLwCJybL9zBttu6"],
       [{ lat: -34.93089, lng: 138.59491 }, "박봉숙 식당","152 Wright St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/e3a91bfbbc9f9e2578ac4eb86da266f0_1702512056_3372.png","https://maps.app.goo.gl/8JMcfPabfQebv5Pt8"],
       [{ lat: -34.93423, lng: 138.60611 }, "고여사","449 Pulteney St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/9cca288eabfa3249e72ec6d731e7e672_1702511272_6008.png","https://maps.app.goo.gl/EV5TMmQJokWk3oe86"],
       // 추가적인 음식점 tourstops을 여기에 추가
     ],
     정비: [
+      [{ lat: -34.90997, lng: 138.68176 }, "A.R.M Mechanical Services","375A Main N Rd, Enfield SA 5085","https://adelaideinside.com/data/editor/2403/2c7e72113375b98191266b619d830656_1710736011_694.png","https://maps.app.goo.gl/A1RxPhtxC1RjLPH98"],
       [{ lat: -34.90997, lng: 138.68176 }, "Green Crash Repairs","14 Hender Ave, Magill SA 5072","https://adelaideinside.com/data/editor/2312/91cd9edd5d55a5f2ee985364df6a3b81_1702602338_5552.png","https://maps.app.goo.gl/ehLrYSTh1XWHippo9"],
       // 추가적인 정비 tourstops을 여기에 추가
     ],
     미용: [
+      [{ lat: -34.88858, lng: 138.65668 }, "Jun's Barber Shop","503B Lower North East RD,Felixstow SA 5070","https://adelaideinside.com/data/editor/2405/f18755b3f97ea393ee403f703127c351_1717115601_7814.jpg","https://maps.app.goo.gl/dPXnQQAfLLEhxEms5"],
+      [{ lat: -34.93113, lng: 138.61215 }, "Hair blooming","169 Hutt St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2404/97e24300f639bde58314eb5ec9319d41_1714364000_6797.png","https://maps.app.goo.gl/ASXZS7zgZ8z2itPA9"],
       [{ lat: -34.92605, lng: 138.60595 }, "Street hair","186a Pulteney St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1705886110_2174.png","https://maps.app.goo.gl/43RtHZKjpcir25pp6"],
       [{ lat: -34.92809, lng: 138.51131 }, "DD Lashes","50 Halsey Road Fulham SA, Australia","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1705885743_0693.png","https://maps.app.goo.gl/UeZjbN57wPLShT5E9"],
       [{ lat: -34.88816, lng: 138.67468 }, "The Born Beauty","6/145 Montacute Rd, Newton SA 5074","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702621787_3727.png","https://maps.app.goo.gl/1N3uYwdMu6nPmrqr6"],
@@ -39,7 +42,6 @@ const tourStops = {
       [{ lat: -34.92306, lng: 138.60575 }, "KOrean COlor Hairsalon","56 Pulteney St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702621027_2335.png","https://maps.app.goo.gl/W1aGYtTxeHpnpxFT7"],
       [{ lat: -34.89021, lng: 138.65468 }, "Cozy Hair","Shop 6/474-476 Payneham Rd, Glynde SA 5070","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702620820_4782.png","https://maps.app.goo.gl/3BAAPSLZXMXEiLiD9"],
       [{ lat: -34.94762, lng: 138.62797 }, "Salon A by Genie","193A Glen Osmond Rd, Frewville SA 5063","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706571484_6158.png","https://maps.app.goo.gl/aGfkucKaRBucUnBZ9"],
-      [{ lat: -34.93113, lng: 138.61215 }, "Hair blooming","169 Hutt St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2404/97e24300f639bde58314eb5ec9319d41_1714364000_6797.png","https://maps.app.goo.gl/ASXZS7zgZ8z2itPA9"],
       // 추가적인 미용 tourstops을 여기에 추가
     ],
     
@@ -48,13 +50,13 @@ const tourStops = {
       // 추가적인 부동산 tourstops을 여기에 추가
     ],
     정육: [
-      [{ lat: -34.88034, lng: 138.68451 }, "yes butcher","2/6 Meredith st. Newton","https://adelaideinside.com/data/editor/2401/c74969568b0da1066b02b045ccf971bc_1704258634_0021.jpg","https://maps.app.goo.gl/cFtFeiKjRipMHU8g6"],
+      [{ lat: -34.88034, lng: 138.68451 }, "yes butcher","2/6 Meredith st. Newton","https://adelaideinside.com/data/editor/2401/c74969568b0da1066b02b045ccf971bc_1704258634_0021.jpg","https://maps.app.goo.gl/5WvyeMHkSLyxbLMM7"],
       [{ lat: -34.89270, lng: 138.64912 }, "최가네 정육점","4/418 Payneham Rd, Glynde SA 5070","https://adelaideinside.com/data/editor/2312/95453068bbdb3e279d6deab8d5d8e2d5_1702445435_9297.jpg","https://maps.app.goo.gl/mrEhBVuigLCMiSov5"],
+      [{ lat: -34.85413, lng: 138.65548 }, "바른 정육점","10A/511 North East Road, Gilles Plains SA 5086","https://adelaideinside.com/data/editor/2403/2c7e72113375b98191266b619d830656_1710736629_813.png","https://maps.app.goo.gl/cFtFeiKjRipMHU8g6"],
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     한인마트: [
       [{ lat: -34.90722, lng: 138.59519 }, "빌리지마트","T25/67 O'Connell St, North Adelaide SA 5006","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702525732_1306.jpeg","https://maps.app.goo.gl/43F1VGgTpn7XyCiv6"],
-      [{ lat: -34.92841, lng: 138.59668 }, "서울식품","66 Grote St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702525593_3085.jpeg","https://maps.app.goo.gl/quhVnctaxP2zSASf9"],
       [{ lat: -34.92886, lng: 138.59693 }, "코리아나마트","Market Plaza, Shop 2-5, 61/63 Grote St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702525441_323.jpeg","https://maps.app.goo.gl/mcVd45zFkeXh6r5e6"],
       [{ lat: -34.90255, lng: 138.65708 }, "패밀리마트","161 Glynburn Rd, Firle SA 5070","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702525241_3454.png","https://maps.app.goo.gl/KEA3fvGs5JGJ3JSG6"],
       [{ lat: -34.92077, lng: 138.64478 }, "해피마트","5068/298 The Parade, Kensington SA 5068","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702525073_4672.png","https://maps.app.goo.gl/BLrmGJCZp7Jgz9bn8"],
@@ -63,6 +65,7 @@ const tourStops = {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     카페: [
+      [{ lat: -34.93427, lng: 138.59931 }, "Hello, Stranger","31 Gilbert St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2405/a8380f9bb0b017fd0f79e55e8a92f310_1715824458_6504.png","https://maps.app.goo.gl/RC8urZVfjje6xWdu8"],
       [{ lat: -34.92356, lng: 138.59781 }, "Waffle & Coffee","2/20-24 Leigh St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702622823_3775.jpeg","https://maps.app.goo.gl/RiNQSnYpL2Y7cUzNA"],
       [{ lat: -34.93224, lng: 138.60337 }, "Seoul Sisters","84 Halifax St, Adelaide SA 5000","https://adelaideinside.com/data/editor/2312/7eeda3c48a764178bea3003fdff56c24_1702607639_5521.png","https://maps.app.goo.gl/HXv2gzA1SDuxSH1V9"],
       [{ lat: -34.92395, lng: 138.55839 }, "Latte Studio","208 Henley Beach Rd, Torrensville SA 5031","https://adelaideinside.com/data/editor/2312/62f7992637f97312009c21b1875876a0_1702527995_7108.jpg","https://maps.app.goo.gl/7xdYSuC12FmyVxGe9"],
@@ -73,6 +76,9 @@ const tourStops = {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     의료: [
+      [{ lat: -34.98506, lng: 138.51944 }, "Hands on Chiropractic & Health","1/54 Pier St, Glenelg South SA 5045","https://adelaideinside.com/data/editor/2407/826a9216ee4490a0d93c6b2b583febd1_1720052871_6292.png","https://maps.app.goo.gl/zhGt8NvRCXPyL6ot8"],
+      [{ lat: -34.88978, lng: 138.65435 }, "Realign Health Chiro","shop5, 471 payneham rd. Felixstow SA 5070","https://adelaideinside.com/data/editor/2404/9becc9fe41775f337d7222210f74ba20_1713318863_0234.png","https://maps.app.goo.gl/Bgv1kP1pk6x69sCB6"],
+      [{ lat: -34.90030, lng: 138.65679 }, "Glynde Vet","125 Glynburn Road, Glynde","https://adelaideinside.com/data/editor/2401/b6239d4397d0cf0be9c997f25aa4b601_1706492987_5318.png","https://maps.app.goo.gl/hs9Y9h3syp1RkwVH8"],
       [{ lat: -34.93101, lng: 138.59610 }, "Harmony Aesthetic Clinic","1st Floor Tenancy 2/22-30 Field St, Adelaide CBD","https://adelaideinside.com/data/editor/2401/c74969568b0da1066b02b045ccf971bc_1704261086_3574.png","https://maps.app.goo.gl/ukKuTUGkMtqyi2pG9"],
       [{ lat: -34.83199, lng: 138.69123 }, "Bupa Dental Tea Tree Plaza","976 North East Road, Modbury SA 5092","https://adelaideinside.com/data/editor/2312/4fc643dcb48ffe00987b6d9eefb182d1_1703297577_3009.jpg","https://maps.app.goo.gl/DNUvNrHssayeN2us9"],
       [{ lat: -34.90884, lng: 138.59580 }, "Anew Smile Implant Centre","151-159 Ward St, North Adelaide, SA 5006","https://adelaideinside.com/data/editor/2312/493eb846c1d08b25da4a70a96acf1b0c_1703222890_2085.png","https://maps.app.goo.gl/cZRi6gSYQNRauyXQ9"],
@@ -89,6 +95,8 @@ const tourStops = {
       // 추가적인 정육 tourstops을 여기에 추가
     ],
     기타: [
+      [{ lat: -34.93055, lng: 138.61660 }, "RAON PAINTING","애들레이드 전지역 작업","https://adelaideinside.com/data/editor/2401/c74969568b0da1066b02b045ccf971bc_1704258275_0216.png","https://maps.app.goo.gl/TfyFs2VWLnxGxbz47"],
+      [{ lat: -34.93025, lng: 138.61630 }, "KPD PAINTING","애들레이드 전지역 작업","https://adelaideinside.com/data/editor/2407/de722d0f91399e207c8cfad45ae28d7c_1722233069_1613.png","https://maps.app.goo.gl/TfyFs2VWLnxGxbz47"],
       [{ lat: -34.92255, lng: 138.59974 }, "Study SA 유학원","Level 3, 50 King William Street, Adelaide, SA 5000, Australia","https://adelaideinside.com/data/editor/2401/c74969568b0da1066b02b045ccf971bc_1704258275_0216.png","https://maps.app.goo.gl/ufcHMezs2Ps4xQtdA"],
       [{ lat: -34.92433, lng: 138.60087 }, "정에듀 Jung Education Australia","25 grenfell st. Adelaide SA 5000","https://adelaideinside.com/data/editor/2401/a3a06945bdb0b5a399e7e9dbd1491dd4_1704258020_8214.jpg","https://maps.app.goo.gl/ycWthuaiyM2QFpjG8"],
       // 추가적인 정육 tourstops을 여기에 추가
