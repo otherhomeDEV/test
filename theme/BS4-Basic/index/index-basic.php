@@ -8,8 +8,22 @@ if($is_wing)
 
 <div class="nt-container px-0 px-sm-4 px-xl-0" style="margin-top:15px;" >
 	<div class="row na-row">
+
+		
 		<!-- 메인 영역 -->
 		<div class="col-md-9 na-col" style="margin-top:10px;">
+
+			<!-- 위젯 시작 { -->
+			<!--<h3 class="h3 f-lg en" style="margin-top:20px;">
+			<a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=business">
+			    한인업체
+			</a>
+			</h3>-->
+			<!--<hr class="hr"/> -->
+			<div class="px-3 px-sm-0 mt-3 mb-4">
+				<?php echo na_widget('data-slider', 'banner-1'); ?>
+			</div>
+			<!-- } 위젯 끝-->
 		
 			<!-- 위젯 시작 { -->
 			<h3 class="h3 f-lg en">
@@ -137,7 +151,7 @@ if($is_wing)
 			
 
 			<!-- 위젯 시작 { -->
-			<h3 class="h3 f-lg en" style="margin-top:20px;">
+			<!--<h3 class="h3 f-lg en" style="margin-top:20px;">
 			<a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=business">
 			    한인업체
 			</a>
@@ -145,7 +159,7 @@ if($is_wing)
 			<hr class="hr"/>
 			<div class="px-3 px-sm-0 mt-3 mb-4">
 				<?php echo na_widget('data-slider', 'banner-1'); ?>
-			</div>
+			</div>-->
 			<!-- } 위젯 끝-->
 
 
