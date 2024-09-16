@@ -25,18 +25,6 @@ if($is_wing)
 			</div>
 			<!-- } 위젯 끝-->
 		
-			<!-- 위젯 시작 { -->
-			<h3 class="h3 f-lg en">
-			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
-				    최신뉴스
-				</a>
-			</h3>
-			<hr class="hr"/>
-			<div class="px-3 px-sm-0 mt-3 mb-4"> <!--style="height:220px;"> 위젯 레이아웃 아래마진 - kayden { -->
-			<?php echo na_widget('wr-news-big', 'wr-news-big-1'); ?>
-			</div>
-			<!-- } 위젯 끝-->
-
 			<div class="row na-row" style="margin-top:45px;">
 			    	<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
@@ -86,6 +74,19 @@ if($is_wing)
 				</div>
 	
 			</div>
+
+			<!-- 위젯 시작 { -->
+				<h3 class="h3 f-lg en">
+			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
+				    최신뉴스
+				</a>
+			</h3>
+			<hr class="hr"/>
+			<div class="px-3 px-sm-0 mt-3 mb-4"> <!--style="height:220px;"> 위젯 레이아웃 아래마진 - kayden { -->
+			<?php echo na_widget('wr-news-big', 'wr-news-big-1'); ?>
+			</div>
+			<!-- } 위젯 끝-->
+
 
 			
 			<!-- 위젯 시작 { -->
