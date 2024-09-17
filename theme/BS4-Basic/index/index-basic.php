@@ -76,6 +76,7 @@ if($is_wing)
 	
 			</div>
 
+
 			<!-- 위젯 시작 { -->
 				<h3 class="h3 f-lg en">
 			    <a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=news">
@@ -193,62 +194,7 @@ if($is_wing)
     		<div class="px-3 px-sm-0 my-3">
         		<?php echo na_widget('wr-gallery-slider', 'gallery-4', 'bo_list=gallery rows=8'); ?>
     		</div>
-   			 <!-- } 위젯 끝-->
-
-
-			<!------------ 수다방 등 화면 하단 위젯들 필요시 uncomment 예정 ------------->
-			<!--<div class="row na-row">
-				<div class="col-md-4 na-col">
-
-					
-					<h3 class="h3 f-lg en">
-						<a href="<//?php echo G5_BBS_URL ?>/board.php?bo_table=free">
-							<span class="float-right more-plus"></span>
-							수다방
-						</a>
-					</h3>
-					<hr class="hr"/>
-					<div class="mt-3 mb-4">
-						<//?php echo na_widget('wr-list', 'blist-4', 'bo_list=free'); ?>
-					</div>
-					
-
-				</div>
-				<div class="col-md-4 na-col">
-
-					
-					<h3 class="h3 f-lg en">
-						<a href="<//?php echo G5_BBS_URL ?>/board.php?bo_table=living">
-							<span class="float-right more-plus"></span>
-							생활정보
-						</a>
-					</h3>
-					<hr class="hr"/>
-					<div class="mt-3 mb-4">
-						<//?php echo na_widget('wr-list', 'blist-5', 'bo_list=living'); ?>
-					</div>
-					
-
-				</div>
-				<div class="col-md-4 na-col">
-
-					
-					<h3 class="h3 f-lg en">
-						<a href="<//?php echo G5_BBS_URL ?>/board.php?bo_table=humor">
-							<span class="float-right more-plus"></span>
-							유머게시판
-						</a>
-					</h3>
-					<hr class="hr"/>
-					<div class="mt-3 mb-4">
-						<//?php echo na_widget('wr-list', 'blist-6', 'bo_list=humor'); ?>
-					</div>
-					
-
-				</div>
-			</div>-->
-
-			
+   			 <!-- } 위젯 끝-->	
 
 		</div>
 
