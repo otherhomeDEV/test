@@ -59,6 +59,8 @@ if($is_wing)
 
 				<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
+<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
+
 					<!-- 위젯 시작 { -->
 					<h3 class="h3 f-lg en mb-2">
 					  <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=event">
@@ -131,7 +133,7 @@ if($is_wing)
 					<?php echo na_widget('wr-list', 'tlist-2', 'gr_id=jobs'); ?>
                 </div>
                     <!-- } 위젯 끝-->
-					
+
 				</div>
 				<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
