@@ -58,8 +58,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</a>
 					<!-- } 위젯 끝-->
 
-
-
 					<!-- 위젯 시작 { -->
 					<h3 class="h3 f-lg en">
 					<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=todayinside">
