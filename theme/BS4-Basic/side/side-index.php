@@ -51,7 +51,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</a>
 					</h3>
 					<hr class="hr"/>
-					<a href="https://www.instagram.com/auinside/">
+					<a href="https://www.instagram.com/auinside/" target="_blank" rel="noopener noreferrer">
 					<div class="px-3 px-sm-0 my-3" style="text-align: center;">
 						<img src="https://adelaideinside.com/data/editor/2409/b95d7f8152657baf16be6bf5815dc25f_1726534811_2455.png" alt="인스타썸네일" class="na-round" title="" style="width:245px;, height: 138px;">
 					</div>
