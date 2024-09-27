@@ -5,14 +5,14 @@ $data=array (
   array (
     'img' => 
     array (
-      0 => '../storage/image/title-main logo.jpg',
-      1 => '../storage/image/title-banner-choisbutcher-400x225.jpg',
+      0 => '../storage/image/title-아더홈 Upscale.jpeg',
+      1 => '../storage/image/title-최가네 Upscale.jpeg',
       2 => '../storage/image/title-Untitled design (5).png',
-      3 => '../storage/image/title-banner-studysa-400x225.jpg',
-      4 => '../storage/image/title-KakaoTalk_20240529_113429846.png',
+      3 => '../storage/image/title-스터디sa Upscale.jpeg',
+      4 => '../storage/image/title-투게더 Upscale.jpeg',
       5 => '../storage/image/title-adelaide (2200 x 1125 px) (1).png',
-      6 => '../storage/image/title-게임-008.png',
-      7 => '../storage/image/title-Raon.png',
+      6 => '../storage/image/title-kpd Upscale.jpeg',
+      7 => '../storage/image/title-라온 Upscale.jpeg',
     ),
     'link' => 
     array (
