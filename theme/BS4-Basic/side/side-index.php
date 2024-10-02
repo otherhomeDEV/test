@@ -30,12 +30,15 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					<!-- } 위젯 끝-->
 
 					<div class="px-3 px-sm-0 mt-3 mb-4">
-    <?php echo na_widget('data-slider', 'banner-2'); ?>
-</div>
-
-<div class="px-3 px-sm-0 mt-3 mb-4">
-    <?php echo na_widget('data-slider', 'banner-3'); ?>
-</div>
+    					<?php echo na_widget('data-slider', 'banner-3'); ?>
+						<?php echo na_widget('data-slider', 'banner-4'); ?>
+						<?php echo na_widget('data-slider', 'banner-5'); ?>
+						<?php echo na_widget('data-slider', 'banner-6'); ?>
+						<?php echo na_widget('data-slider', 'banner-7'); ?>
+						<?php echo na_widget('data-slider', 'banner-8'); ?>
+						<?php echo na_widget('data-slider', 'banner-9'); ?>
+						<?php echo na_widget('data-slider', 'banner-10'); ?>
+					</div>
 
 				
 		
