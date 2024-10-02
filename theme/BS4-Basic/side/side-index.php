@@ -29,6 +29,14 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 						</div>
 					<!-- } 위젯 끝-->
 
+					<div class="px-3 px-sm-0 mt-3 mb-4">
+    <?php echo na_widget('data-slider', 'banner-2'); ?>
+</div>
+
+<div class="px-3 px-sm-0 mt-3 mb-4">
+    <?php echo na_widget('data-slider', 'banner-3'); ?>
+</div>
+
 				
 		
 
