@@ -11,7 +11,7 @@ if($is_wing)
 
 		
 		<!-- 메인 영역 -->
-		<div class="col-md-9 na-col" style="margin-top:35px;">
+		<div class="col-md-9 na-col" style="margin-top:30px;">
 
 			<!-- 위젯 시작 { -->
 				<h3 class="h3 f-lg en">
