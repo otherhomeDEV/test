@@ -11,7 +11,7 @@ if($is_wing)
 
 		
 		<!-- 메인 영역 -->
-		<div class="col-md-9 na-col" style="margin-top:30px;">
+		<div class="col-md-9 na-col" style="margin-top:10px;">
 
 			<!-- 위젯 시작 { -->
 				<h3 class="h3 f-lg en">
@@ -25,7 +25,7 @@ if($is_wing)
 			</div>
 			<!-- } 위젯 끝-->
 		
-			<div class="row na-row" style="margin-top:70px;">
+			<div class="row na-row" style="margin-top:50px;">
 			    	<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
 				  <!-- 위젯 시작 { -->
@@ -78,7 +78,7 @@ if($is_wing)
 
 			
 			<!-- 위젯 시작 { -->
-				<h3 class="h3 f-lg en" style="margin-top:40px;">
+				<h3 class="h3 f-lg en" style="margin-top:20px;">
 				<a href="<?php echo G5_BBS_URL ?>/group.php?gr_id=food">
 					맛집 & 여행
 				</a>
@@ -90,7 +90,7 @@ if($is_wing)
 			<!-- } 위젯 끝-->
 
 
-			<div class="row na-row" style="margin-top:45px;">
+			<div class="row na-row" style="margin-top:25px;">
 			<div class="col-md-4 na-col">  <!--  style="margin-bottom:40px;" 위젯 레이아웃 아래마진 - kayden { -->
 
 				<!-- 위젯 시작 { -->
