@@ -23,7 +23,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 					</div>
 					</a>
 
-
+<!--
 
 					<div class="px-3 px-sm-0 mt-3 mb-4">
     <div class="widget-wrapper" style="margin-bottom: 20px;">
@@ -50,7 +50,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     <div class="widget-wrapper" style="margin-bottom: 20px;">
         <?php echo na_widget('data-slider', 'banner-10'); ?>
     </div>
-</div>
+</div>-->
 
 
 				
