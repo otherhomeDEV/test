@@ -87,7 +87,7 @@ if($is_wing)
 			<div class="px-3 px-sm-0 my-3">
 				<?php echo na_widget('wr-gallery', 'gallery-1', 'gr_id=food'); ?>
 			</div>
-			<!-- } 위젯 끝-->
+			<!-- } 위젯 끝 end-->
 
 
 			<div class="row na-row" style="margin-top:25px;">
