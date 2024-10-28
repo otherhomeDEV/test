@@ -58,6 +58,7 @@ if(isset($tset['page_sub']) && $tset['page_sub']) {
 			<div class="text-center px-3 pb-4">
 				<strong><?php echo $config['cf_title'] ?> <i class="fa fa-copyright"></i></strong>
 				<span>All rights reserved.</span>
+				<span><img src="https://adelaideinside.com/data/editor/2409/b95d7f8152657baf16be6bf5815dc25f_1726534811_2455.png" alt="인스타썸네일" class="na-round" title="" style="width:150px;, height: 40px;"></span>
 			</div>
 
 		</div>

@@ -16,8 +16,8 @@ $data=array (
     array (
       0 => 
       array (
-        'text' => '호주뉴스',
-        'href' => '/bbs/board.php?bo_table=aus_news',
+        'text' => '공지 및 안내',
+        'href' => '/bbs/board.php?bo_table=notice',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -28,8 +28,8 @@ $data=array (
       ),
       1 => 
       array (
-        'text' => '한국뉴스',
-        'href' => '/bbs/board.php?bo_table=kor_news',
+        'text' => '호주뉴스',
+        'href' => '/bbs/board.php?bo_table=aus_news',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -40,8 +40,8 @@ $data=array (
       ),
       2 => 
       array (
-        'text' => '인사이드 뉴스',
-        'href' => '/bbs/board.php?bo_table=notice',
+        'text' => '한국뉴스',
+        'href' => '/bbs/board.php?bo_table=kor_news',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -103,7 +103,7 @@ $data=array (
     array (
       0 => 
       array (
-        'text' => '아무거나 말해요^^',
+        'text' => '자유게시판',
         'href' => '/bbs/board.php?bo_table=freeboard',
         'icon' => 'empty',
         'target' => '_self',
@@ -115,7 +115,7 @@ $data=array (
       ),
       1 => 
       array (
-        'text' => '뭐든지 물어보세요!',
+        'text' => '질문게시판',
         'href' => '/bbs/board.php?bo_table=QnA_2',
         'icon' => 'empty',
         'target' => '_self',
@@ -124,22 +124,25 @@ $data=array (
         'limit' => '',
         'grade' => 0,
         'id' => 'link',
+        's' => 
+        array (
+          0 => 
+          array (
+            'text' => 'FAQ',
+            'href' => '/bbs/board.php?bo_table=QnA_1',
+            'icon' => 'empty',
+            'target' => '_self',
+            'line' => '',
+            'sp' => '',
+            'limit' => '',
+            'grade' => 0,
+            'id' => 'link',
+          ),
+        ),
       ),
       2 => 
       array (
-        'text' => 'FAQ',
-        'href' => '/bbs/board.php?bo_table=QnA_1',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      3 => 
-      array (
-        'text' => '워홀러 & 이민러',
+        'text' => '교민 소식 게시판',
         'href' => '/bbs/board.php?bo_table=workingholiday',
         'icon' => 'empty',
         'target' => '_self',
@@ -319,29 +322,44 @@ $data=array (
       ),
       4 => 
       array (
-        'text' => 'Life TIP',
-        'href' => '/bbs/board.php?bo_table=tips',
+        'text' => '생활꿀팁',
         'icon' => 'empty',
+        'href' => '/bbs/group.php?gr_id=lifetip',
         'target' => '_self',
         'line' => '',
         'sp' => '',
         'limit' => '',
         'grade' => 0,
         'id' => 'link',
+        's' => 
+        array (
+          0 => 
+          array (
+            'text' => 'Life TIP',
+            'href' => '/bbs/board.php?bo_table=tips',
+            'icon' => 'empty',
+            'target' => '_self',
+            'line' => '',
+            'sp' => '',
+            'limit' => '',
+            'grade' => 0,
+            'id' => 'link',
+          ),
+          1 => 
+          array (
+            'text' => 'Shopping TIP',
+            'href' => '/bbs/board.php?bo_table=hotdeal',
+            'icon' => 'empty',
+            'target' => '_self',
+            'line' => '',
+            'sp' => '',
+            'limit' => '',
+            'grade' => 0,
+            'id' => 'link',
+          ),
+        ),
       ),
       5 => 
-      array (
-        'text' => 'Shopping TIP',
-        'href' => '/bbs/board.php?bo_table=hotdeal',
-        'icon' => 'empty',
-        'target' => '_self',
-        'line' => '',
-        'sp' => '',
-        'limit' => '',
-        'grade' => 0,
-        'id' => 'link',
-      ),
-      6 => 
       array (
         'text' => '경제 칼럼',
         'href' => '/bbs/board.php?bo_table=property_column',
@@ -353,7 +371,7 @@ $data=array (
         'grade' => 0,
         'id' => 'link',
       ),
-      7 => 
+      6 => 
       array (
         'text' => '건강 칼럼',
         'href' => '/bbs/board.php?bo_table=medical',

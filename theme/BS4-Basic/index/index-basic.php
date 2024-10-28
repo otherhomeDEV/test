@@ -46,7 +46,7 @@ if($is_wing)
                     <!-- 위젯 시작 { -->
                 <h3 class="h3 f-lg en" >
                     <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=freeboard">
-		                아무거나 말해요^^
+		                자유게시판
                     </a>
                 </h3>
                 <hr class="hr"/>
@@ -61,13 +61,13 @@ if($is_wing)
 
 					<!-- 위젯 시작 { -->
 					<h3 class="h3 f-lg en mb-2">
-					  <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=event">
-						  업체게시판 및 안내
+					  <a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=notice">
+						  공지 및 안내
 					  </a>
 					</h3>
 					<hr class="hr"/>
 					  <div class="mt-3 mb-4">
-						  <?php echo na_widget('wr-list', 'tlist-1', 'bo_table=event'); ?>
+						  <?php echo na_widget('wr-list', 'notice', 'bo_table=notice'); ?>
 					  </div>
 					  <!-- } 위젯 끝-->
 				</div>
