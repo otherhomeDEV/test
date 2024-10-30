@@ -143,7 +143,7 @@ $data=array (
       2 => 
       array (
         'text' => '교민 소식 게시판',
-        'href' => '/bbs/board.php?bo_table=workingholiday',
+        'href' => '/bbs/board.php?bo_table=expatnews',
         'icon' => 'empty',
         'target' => '_self',
         'line' => '',
@@ -323,8 +323,8 @@ $data=array (
       4 => 
       array (
         'text' => '생활꿀팁',
-        'icon' => 'empty',
         'href' => '/bbs/group.php?gr_id=lifetip',
+        'icon' => 'empty',
         'target' => '_self',
         'line' => '',
         'sp' => '',
