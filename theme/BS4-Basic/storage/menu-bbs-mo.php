@@ -142,6 +142,18 @@ $data=array (
       ),
       2 => 
       array (
+        'text' => '워홀게시판',
+        'icon' => 'empty',
+        'href' => '/bbs/board.php?bo_table=workingholiday',
+        'target' => '_self',
+        'line' => '',
+        'sp' => '',
+        'limit' => '',
+        'grade' => 0,
+        'id' => 'link',
+      ),
+      3 => 
+      array (
         'text' => '교민 소식 게시판',
         'href' => '/bbs/board.php?bo_table=expatnews',
         'icon' => 'empty',
